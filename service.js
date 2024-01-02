@@ -83,6 +83,7 @@ async function getCommands() {
   async function addAction(username, action, params) {
     try {
       const id = await getContextId(username);
+      await db.query(`select clearActivity($1)`, [id]);
       const x = await db.query(`select addCommand($1, $2) as id`, [id, action]);
       if (!x.rows || x.rows.length == 0) return;
       for (let i = 0; i < params.length; i++) {
@@ -175,7 +176,7 @@ async function getCommands() {
        `select a.id, a.order_num, c.message
         from   action a
         inner  join localized_string c on (c.action_id = a.id and c.locale = $1)
-        where  a.parent_id = $2 and a.type_id = 4
+        where  a.parent_id = $2
         order  by a.order_num`, [x.rows[i].locale, x.rows[i].id]);
         let menu = [];
         for (let j = 0; j < y.rows.length; j++) {
