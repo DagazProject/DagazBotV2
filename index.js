@@ -121,10 +121,6 @@ const init = async function() {
                       return;
                     }
                 }
-                if (await service.saveParam(msg.from.username ? msg.from.username : msg.from.id, msg.text, chatId, msg.message_id, deleteMessage)) {
-                    await run();
-                    return;
-                }
                 if (cmd !== null) {
                     for (let i = 0; i < commands.length; i++) {
                         if (commands[i].name == cmd) {
@@ -142,6 +138,10 @@ const init = async function() {
                             return;
                         }
                     }
+                }
+                if (await service.saveParam(msg.from.username ? msg.from.username : msg.from.id, msg.text, chatId, msg.message_id, deleteMessage)) {
+                  await run();
+                  return;
                 }
                 await service.saveMessage(msg.from.username ? msg.from.username : msg.from.id, msg.message_id, msg.text, msg.reply_to_message);
             } catch (error) {
