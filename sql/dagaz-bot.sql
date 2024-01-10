@@ -5,7 +5,7 @@
 -- Dumped from database version 11.1
 -- Dumped by pg_dump version 11.1
 
--- Started on 2024-01-03 17:21:24
+-- Started on 2024-01-10 11:14:57
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -18,7 +18,7 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- TOC entry 274 (class 1255 OID 1813623)
+-- TOC entry 272 (class 1255 OID 1813623)
 -- Name: addcommand(integer, integer); Type: FUNCTION; Schema: public; Owner: lora_server
 --
 
@@ -39,7 +39,7 @@ $$;
 ALTER FUNCTION public.addcommand(pcontext integer, paction integer) OWNER TO lora_server;
 
 --
--- TOC entry 289 (class 1255 OID 1810140)
+-- TOC entry 287 (class 1255 OID 1810140)
 -- Name: chooseaccount(integer, text, integer); Type: FUNCTION; Schema: public; Owner: dagaz
 --
 
@@ -80,7 +80,7 @@ $$;
 ALTER FUNCTION public.chooseaccount(puser integer, paccount text, pserver integer) OWNER TO dagaz;
 
 --
--- TOC entry 275 (class 1255 OID 1828710)
+-- TOC entry 273 (class 1255 OID 1828710)
 -- Name: clearactivity(integer); Type: FUNCTION; Schema: public; Owner: lora_server
 --
 
@@ -100,7 +100,7 @@ $$;
 ALTER FUNCTION public.clearactivity(pid integer) OWNER TO lora_server;
 
 --
--- TOC entry 291 (class 1255 OID 1810141)
+-- TOC entry 289 (class 1255 OID 1810141)
 -- Name: createaccount(integer, integer); Type: FUNCTION; Schema: public; Owner: dagaz
 --
 
@@ -143,7 +143,7 @@ $$;
 ALTER FUNCTION public.createaccount(puser integer, pserver integer) OWNER TO dagaz;
 
 --
--- TOC entry 292 (class 1255 OID 1810142)
+-- TOC entry 290 (class 1255 OID 1810142)
 -- Name: createuser(text, bigint, text, text, text); Type: FUNCTION; Schema: public; Owner: dagaz
 --
 
@@ -183,7 +183,7 @@ $$;
 ALTER FUNCTION public.createuser(plogin text, pchatid bigint, pfirst text, plast text, plocale text) OWNER TO dagaz;
 
 --
--- TOC entry 293 (class 1255 OID 1810143)
+-- TOC entry 291 (class 1255 OID 1810143)
 -- Name: createuser(text, bigint, bigint, text, text, text); Type: FUNCTION; Schema: public; Owner: dagaz
 --
 
@@ -223,7 +223,7 @@ CREATE FUNCTION public.createuser(plogin text, puserid bigint, pchatid bigint, p
 ALTER FUNCTION public.createuser(plogin text, puserid bigint, pchatid bigint, pfirst text, plast text, plocale text) OWNER TO dagaz;
 
 --
--- TOC entry 276 (class 1255 OID 1810144)
+-- TOC entry 274 (class 1255 OID 1810144)
 -- Name: enterurl(integer, integer); Type: FUNCTION; Schema: public; Owner: dagaz
 --
 
@@ -260,7 +260,7 @@ CREATE FUNCTION public.enterurl(puser integer, pserver integer) RETURNS json
 ALTER FUNCTION public.enterurl(puser integer, pserver integer) OWNER TO dagaz;
 
 --
--- TOC entry 294 (class 1255 OID 1810145)
+-- TOC entry 292 (class 1255 OID 1810145)
 -- Name: gameurl(integer, integer); Type: FUNCTION; Schema: public; Owner: dagaz
 --
 
@@ -298,7 +298,7 @@ $$;
 ALTER FUNCTION public.gameurl(puser integer, pserver integer) OWNER TO dagaz;
 
 --
--- TOC entry 300 (class 1255 OID 1810146)
+-- TOC entry 298 (class 1255 OID 1810146)
 -- Name: getcommands(); Type: FUNCTION; Schema: public; Owner: dagaz
 --
 
@@ -351,7 +351,7 @@ $$;
 ALTER FUNCTION public.getcommands() OWNER TO dagaz;
 
 --
--- TOC entry 295 (class 1255 OID 1810147)
+-- TOC entry 293 (class 1255 OID 1810147)
 -- Name: getnotify(integer, integer); Type: FUNCTION; Schema: public; Owner: dagaz
 --
 
@@ -403,7 +403,7 @@ $$;
 ALTER FUNCTION public.getnotify(pid integer, pserver integer) OWNER TO dagaz;
 
 --
--- TOC entry 296 (class 1255 OID 1810148)
+-- TOC entry 294 (class 1255 OID 1810148)
 -- Name: savemessage(text, bigint, text, bigint); Type: FUNCTION; Schema: public; Owner: dagaz
 --
 
@@ -432,7 +432,7 @@ $$;
 ALTER FUNCTION public.savemessage(plogin text, pid bigint, pdata text, preply bigint) OWNER TO dagaz;
 
 --
--- TOC entry 299 (class 1255 OID 1811067)
+-- TOC entry 297 (class 1255 OID 1811067)
 -- Name: saveprofile(integer, text, integer); Type: FUNCTION; Schema: public; Owner: lora_server
 --
 
@@ -467,7 +467,7 @@ $$;
 ALTER FUNCTION public.saveprofile(puser integer, paccount text, pserver integer) OWNER TO lora_server;
 
 --
--- TOC entry 297 (class 1255 OID 1810149)
+-- TOC entry 295 (class 1255 OID 1810149)
 -- Name: setactionbynum(integer, integer, integer); Type: FUNCTION; Schema: public; Owner: dagaz
 --
 
@@ -498,7 +498,7 @@ $$;
 ALTER FUNCTION public.setactionbynum(puser integer, paction integer, pnum integer) OWNER TO dagaz;
 
 --
--- TOC entry 290 (class 1255 OID 1810150)
+-- TOC entry 288 (class 1255 OID 1810150)
 -- Name: setparams(); Type: FUNCTION; Schema: public; Owner: dagaz
 --
 
@@ -569,7 +569,7 @@ $$;
 ALTER FUNCTION public.setparams() OWNER TO dagaz;
 
 --
--- TOC entry 298 (class 1255 OID 1810151)
+-- TOC entry 296 (class 1255 OID 1810151)
 -- Name: setparamvalue(integer, integer, text); Type: FUNCTION; Schema: public; Owner: dagaz
 --
 
@@ -631,7 +631,7 @@ CREATE SEQUENCE public.account_id_seq
 ALTER TABLE public.account_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4367 (class 0 OID 0)
+-- TOC entry 4351 (class 0 OID 0)
 -- Dependencies: 197
 -- Name: account_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
@@ -658,47 +658,7 @@ CREATE TABLE public.action (
 ALTER TABLE public.action OWNER TO dagaz;
 
 --
--- TOC entry 199 (class 1259 OID 1810161)
--- Name: action_log; Type: TABLE; Schema: public; Owner: dagaz
---
-
-CREATE TABLE public.action_log (
-    id integer NOT NULL,
-    account_id integer NOT NULL,
-    action_id integer NOT NULL,
-    event_time timestamp without time zone DEFAULT now() NOT NULL
-);
-
-
-ALTER TABLE public.action_log OWNER TO dagaz;
-
---
--- TOC entry 200 (class 1259 OID 1810165)
--- Name: action_log_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
---
-
-CREATE SEQUENCE public.action_log_id_seq
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.action_log_id_seq OWNER TO dagaz;
-
---
--- TOC entry 4368 (class 0 OID 0)
--- Dependencies: 200
--- Name: action_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
---
-
-ALTER SEQUENCE public.action_log_id_seq OWNED BY public.action_log.id;
-
-
---
--- TOC entry 273 (class 1259 OID 1836315)
+-- TOC entry 271 (class 1259 OID 1836315)
 -- Name: action_param; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -714,7 +674,7 @@ CREATE TABLE public.action_param (
 ALTER TABLE public.action_param OWNER TO dagaz;
 
 --
--- TOC entry 201 (class 1259 OID 1810167)
+-- TOC entry 199 (class 1259 OID 1810167)
 -- Name: action_type; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -727,7 +687,7 @@ CREATE TABLE public.action_type (
 ALTER TABLE public.action_type OWNER TO dagaz;
 
 --
--- TOC entry 270 (class 1259 OID 1813504)
+-- TOC entry 268 (class 1259 OID 1813504)
 -- Name: clear_params; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -741,7 +701,7 @@ CREATE TABLE public.clear_params (
 ALTER TABLE public.clear_params OWNER TO dagaz;
 
 --
--- TOC entry 202 (class 1259 OID 1810170)
+-- TOC entry 200 (class 1259 OID 1810170)
 -- Name: client_message; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -755,7 +715,7 @@ CREATE TABLE public.client_message (
 ALTER TABLE public.client_message OWNER TO dagaz;
 
 --
--- TOC entry 203 (class 1259 OID 1810173)
+-- TOC entry 201 (class 1259 OID 1810173)
 -- Name: client_message_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -771,8 +731,8 @@ CREATE SEQUENCE public.client_message_id_seq
 ALTER TABLE public.client_message_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4369 (class 0 OID 0)
--- Dependencies: 203
+-- TOC entry 4352 (class 0 OID 0)
+-- Dependencies: 201
 -- Name: client_message_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -780,7 +740,7 @@ ALTER SEQUENCE public.client_message_id_seq OWNED BY public.client_message.id;
 
 
 --
--- TOC entry 272 (class 1259 OID 1813570)
+-- TOC entry 270 (class 1259 OID 1813570)
 -- Name: command_param; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -795,7 +755,7 @@ CREATE TABLE public.command_param (
 ALTER TABLE public.command_param OWNER TO dagaz;
 
 --
--- TOC entry 271 (class 1259 OID 1813568)
+-- TOC entry 269 (class 1259 OID 1813568)
 -- Name: command_param_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -811,8 +771,8 @@ CREATE SEQUENCE public.command_param_id_seq
 ALTER TABLE public.command_param_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4370 (class 0 OID 0)
--- Dependencies: 271
+-- TOC entry 4353 (class 0 OID 0)
+-- Dependencies: 269
 -- Name: command_param_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -820,7 +780,7 @@ ALTER SEQUENCE public.command_param_id_seq OWNED BY public.command_param.id;
 
 
 --
--- TOC entry 204 (class 1259 OID 1810175)
+-- TOC entry 202 (class 1259 OID 1810175)
 -- Name: command_queue; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -836,7 +796,7 @@ CREATE TABLE public.command_queue (
 ALTER TABLE public.command_queue OWNER TO dagaz;
 
 --
--- TOC entry 205 (class 1259 OID 1810182)
+-- TOC entry 203 (class 1259 OID 1810182)
 -- Name: command_queue_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -851,8 +811,8 @@ CREATE SEQUENCE public.command_queue_id_seq
 ALTER TABLE public.command_queue_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4371 (class 0 OID 0)
--- Dependencies: 205
+-- TOC entry 4354 (class 0 OID 0)
+-- Dependencies: 203
 -- Name: command_queue_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -860,7 +820,7 @@ ALTER SEQUENCE public.command_queue_id_seq OWNED BY public.command_queue.id;
 
 
 --
--- TOC entry 206 (class 1259 OID 1810184)
+-- TOC entry 204 (class 1259 OID 1810184)
 -- Name: common_context; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -877,7 +837,7 @@ CREATE TABLE public.common_context (
 ALTER TABLE public.common_context OWNER TO dagaz;
 
 --
--- TOC entry 207 (class 1259 OID 1810188)
+-- TOC entry 205 (class 1259 OID 1810188)
 -- Name: common_context_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -893,8 +853,8 @@ CREATE SEQUENCE public.common_context_id_seq
 ALTER TABLE public.common_context_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4372 (class 0 OID 0)
--- Dependencies: 207
+-- TOC entry 4355 (class 0 OID 0)
+-- Dependencies: 205
 -- Name: common_context_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -902,7 +862,7 @@ ALTER SEQUENCE public.common_context_id_seq OWNED BY public.common_context.id;
 
 
 --
--- TOC entry 208 (class 1259 OID 1810190)
+-- TOC entry 206 (class 1259 OID 1810190)
 -- Name: db_action; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -918,7 +878,7 @@ CREATE TABLE public.db_action (
 ALTER TABLE public.db_action OWNER TO dagaz;
 
 --
--- TOC entry 209 (class 1259 OID 1810193)
+-- TOC entry 207 (class 1259 OID 1810193)
 -- Name: db_param; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -934,7 +894,7 @@ CREATE TABLE public.db_param (
 ALTER TABLE public.db_param OWNER TO dagaz;
 
 --
--- TOC entry 210 (class 1259 OID 1810196)
+-- TOC entry 208 (class 1259 OID 1810196)
 -- Name: db_result; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -949,7 +909,7 @@ CREATE TABLE public.db_result (
 ALTER TABLE public.db_result OWNER TO dagaz;
 
 --
--- TOC entry 211 (class 1259 OID 1810199)
+-- TOC entry 209 (class 1259 OID 1810199)
 -- Name: dbproc; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -963,7 +923,7 @@ CREATE TABLE public.dbproc (
 ALTER TABLE public.dbproc OWNER TO dagaz;
 
 --
--- TOC entry 212 (class 1259 OID 1810202)
+-- TOC entry 210 (class 1259 OID 1810202)
 -- Name: edge; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -983,7 +943,7 @@ CREATE TABLE public.edge (
 ALTER TABLE public.edge OWNER TO dagaz;
 
 --
--- TOC entry 213 (class 1259 OID 1810208)
+-- TOC entry 211 (class 1259 OID 1810208)
 -- Name: edge_cnt; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -998,7 +958,7 @@ CREATE TABLE public.edge_cnt (
 ALTER TABLE public.edge_cnt OWNER TO dagaz;
 
 --
--- TOC entry 214 (class 1259 OID 1810212)
+-- TOC entry 212 (class 1259 OID 1810212)
 -- Name: edge_cnt_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -1014,8 +974,8 @@ CREATE SEQUENCE public.edge_cnt_id_seq
 ALTER TABLE public.edge_cnt_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4373 (class 0 OID 0)
--- Dependencies: 214
+-- TOC entry 4356 (class 0 OID 0)
+-- Dependencies: 212
 -- Name: edge_cnt_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -1023,7 +983,7 @@ ALTER SEQUENCE public.edge_cnt_id_seq OWNED BY public.edge_cnt.id;
 
 
 --
--- TOC entry 215 (class 1259 OID 1810214)
+-- TOC entry 213 (class 1259 OID 1810214)
 -- Name: edge_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -1039,8 +999,8 @@ CREATE SEQUENCE public.edge_id_seq
 ALTER TABLE public.edge_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4374 (class 0 OID 0)
--- Dependencies: 215
+-- TOC entry 4357 (class 0 OID 0)
+-- Dependencies: 213
 -- Name: edge_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -1048,7 +1008,7 @@ ALTER SEQUENCE public.edge_id_seq OWNED BY public.edge.id;
 
 
 --
--- TOC entry 216 (class 1259 OID 1810216)
+-- TOC entry 214 (class 1259 OID 1810216)
 -- Name: edge_info; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1063,7 +1023,7 @@ CREATE TABLE public.edge_info (
 ALTER TABLE public.edge_info OWNER TO dagaz;
 
 --
--- TOC entry 217 (class 1259 OID 1810222)
+-- TOC entry 215 (class 1259 OID 1810222)
 -- Name: edge_info_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -1079,8 +1039,8 @@ CREATE SEQUENCE public.edge_info_id_seq
 ALTER TABLE public.edge_info_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4375 (class 0 OID 0)
--- Dependencies: 217
+-- TOC entry 4358 (class 0 OID 0)
+-- Dependencies: 215
 -- Name: edge_info_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -1088,7 +1048,7 @@ ALTER SEQUENCE public.edge_info_id_seq OWNED BY public.edge_info.id;
 
 
 --
--- TOC entry 218 (class 1259 OID 1810224)
+-- TOC entry 216 (class 1259 OID 1810224)
 -- Name: edge_param; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1103,7 +1063,7 @@ CREATE TABLE public.edge_param (
 ALTER TABLE public.edge_param OWNER TO dagaz;
 
 --
--- TOC entry 219 (class 1259 OID 1810227)
+-- TOC entry 217 (class 1259 OID 1810227)
 -- Name: edge_param_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -1119,8 +1079,8 @@ CREATE SEQUENCE public.edge_param_id_seq
 ALTER TABLE public.edge_param_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4376 (class 0 OID 0)
--- Dependencies: 219
+-- TOC entry 4359 (class 0 OID 0)
+-- Dependencies: 217
 -- Name: edge_param_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -1128,7 +1088,7 @@ ALTER SEQUENCE public.edge_param_id_seq OWNED BY public.edge_param.id;
 
 
 --
--- TOC entry 220 (class 1259 OID 1810229)
+-- TOC entry 218 (class 1259 OID 1810229)
 -- Name: game; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1143,7 +1103,7 @@ CREATE TABLE public.game (
 ALTER TABLE public.game OWNER TO dagaz;
 
 --
--- TOC entry 221 (class 1259 OID 1810235)
+-- TOC entry 219 (class 1259 OID 1810235)
 -- Name: info_type; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1156,7 +1116,7 @@ CREATE TABLE public.info_type (
 ALTER TABLE public.info_type OWNER TO dagaz;
 
 --
--- TOC entry 222 (class 1259 OID 1810238)
+-- TOC entry 220 (class 1259 OID 1810238)
 -- Name: job; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1171,7 +1131,7 @@ CREATE TABLE public.job (
 ALTER TABLE public.job OWNER TO dagaz;
 
 --
--- TOC entry 223 (class 1259 OID 1810241)
+-- TOC entry 221 (class 1259 OID 1810241)
 -- Name: job_data; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1188,7 +1148,7 @@ CREATE TABLE public.job_data (
 ALTER TABLE public.job_data OWNER TO dagaz;
 
 --
--- TOC entry 224 (class 1259 OID 1810248)
+-- TOC entry 222 (class 1259 OID 1810248)
 -- Name: job_data_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -1203,8 +1163,8 @@ CREATE SEQUENCE public.job_data_id_seq
 ALTER TABLE public.job_data_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4377 (class 0 OID 0)
--- Dependencies: 224
+-- TOC entry 4360 (class 0 OID 0)
+-- Dependencies: 222
 -- Name: job_data_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -1212,7 +1172,7 @@ ALTER SEQUENCE public.job_data_id_seq OWNED BY public.job_data.id;
 
 
 --
--- TOC entry 225 (class 1259 OID 1810250)
+-- TOC entry 223 (class 1259 OID 1810250)
 -- Name: localized_string; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1227,7 +1187,7 @@ CREATE TABLE public.localized_string (
 ALTER TABLE public.localized_string OWNER TO dagaz;
 
 --
--- TOC entry 226 (class 1259 OID 1810256)
+-- TOC entry 224 (class 1259 OID 1810256)
 -- Name: localized_string_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -1243,8 +1203,8 @@ CREATE SEQUENCE public.localized_string_id_seq
 ALTER TABLE public.localized_string_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4378 (class 0 OID 0)
--- Dependencies: 226
+-- TOC entry 4361 (class 0 OID 0)
+-- Dependencies: 224
 -- Name: localized_string_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -1252,7 +1212,7 @@ ALTER SEQUENCE public.localized_string_id_seq OWNED BY public.localized_string.i
 
 
 --
--- TOC entry 227 (class 1259 OID 1810264)
+-- TOC entry 225 (class 1259 OID 1810264)
 -- Name: message; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1274,7 +1234,7 @@ CREATE TABLE public.message (
 ALTER TABLE public.message OWNER TO dagaz;
 
 --
--- TOC entry 228 (class 1259 OID 1810272)
+-- TOC entry 226 (class 1259 OID 1810272)
 -- Name: message_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -1290,8 +1250,8 @@ CREATE SEQUENCE public.message_id_seq
 ALTER TABLE public.message_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4379 (class 0 OID 0)
--- Dependencies: 228
+-- TOC entry 4362 (class 0 OID 0)
+-- Dependencies: 226
 -- Name: message_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -1299,7 +1259,7 @@ ALTER SEQUENCE public.message_id_seq OWNED BY public.message.id;
 
 
 --
--- TOC entry 229 (class 1259 OID 1810274)
+-- TOC entry 227 (class 1259 OID 1810274)
 -- Name: migrations; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1313,7 +1273,7 @@ CREATE TABLE public.migrations (
 ALTER TABLE public.migrations OWNER TO dagaz;
 
 --
--- TOC entry 230 (class 1259 OID 1810280)
+-- TOC entry 228 (class 1259 OID 1810280)
 -- Name: migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -1329,8 +1289,8 @@ CREATE SEQUENCE public.migrations_id_seq
 ALTER TABLE public.migrations_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4380 (class 0 OID 0)
--- Dependencies: 230
+-- TOC entry 4363 (class 0 OID 0)
+-- Dependencies: 228
 -- Name: migrations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -1338,7 +1298,7 @@ ALTER SEQUENCE public.migrations_id_seq OWNED BY public.migrations.id;
 
 
 --
--- TOC entry 231 (class 1259 OID 1810282)
+-- TOC entry 229 (class 1259 OID 1810282)
 -- Name: node; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1353,7 +1313,7 @@ CREATE TABLE public.node (
 ALTER TABLE public.node OWNER TO dagaz;
 
 --
--- TOC entry 232 (class 1259 OID 1810285)
+-- TOC entry 230 (class 1259 OID 1810285)
 -- Name: node_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -1369,8 +1329,8 @@ CREATE SEQUENCE public.node_id_seq
 ALTER TABLE public.node_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4381 (class 0 OID 0)
--- Dependencies: 232
+-- TOC entry 4364 (class 0 OID 0)
+-- Dependencies: 230
 -- Name: node_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -1378,7 +1338,7 @@ ALTER SEQUENCE public.node_id_seq OWNED BY public.node.id;
 
 
 --
--- TOC entry 233 (class 1259 OID 1810287)
+-- TOC entry 231 (class 1259 OID 1810287)
 -- Name: node_image; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1391,7 +1351,7 @@ CREATE TABLE public.node_image (
 ALTER TABLE public.node_image OWNER TO dagaz;
 
 --
--- TOC entry 234 (class 1259 OID 1810293)
+-- TOC entry 232 (class 1259 OID 1810293)
 -- Name: node_image_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -1407,8 +1367,8 @@ CREATE SEQUENCE public.node_image_id_seq
 ALTER TABLE public.node_image_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4382 (class 0 OID 0)
--- Dependencies: 234
+-- TOC entry 4365 (class 0 OID 0)
+-- Dependencies: 232
 -- Name: node_image_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -1416,7 +1376,7 @@ ALTER SEQUENCE public.node_image_id_seq OWNED BY public.node_image.id;
 
 
 --
--- TOC entry 235 (class 1259 OID 1810295)
+-- TOC entry 233 (class 1259 OID 1810295)
 -- Name: node_info; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1434,7 +1394,7 @@ CREATE TABLE public.node_info (
 ALTER TABLE public.node_info OWNER TO dagaz;
 
 --
--- TOC entry 236 (class 1259 OID 1810301)
+-- TOC entry 234 (class 1259 OID 1810301)
 -- Name: node_info_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -1450,8 +1410,8 @@ CREATE SEQUENCE public.node_info_id_seq
 ALTER TABLE public.node_info_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4383 (class 0 OID 0)
--- Dependencies: 236
+-- TOC entry 4366 (class 0 OID 0)
+-- Dependencies: 234
 -- Name: node_info_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -1459,7 +1419,7 @@ ALTER SEQUENCE public.node_info_id_seq OWNED BY public.node_info.id;
 
 
 --
--- TOC entry 237 (class 1259 OID 1810303)
+-- TOC entry 235 (class 1259 OID 1810303)
 -- Name: node_type; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1472,7 +1432,7 @@ CREATE TABLE public.node_type (
 ALTER TABLE public.node_type OWNER TO dagaz;
 
 --
--- TOC entry 238 (class 1259 OID 1810306)
+-- TOC entry 236 (class 1259 OID 1810306)
 -- Name: option_type; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1485,7 +1445,7 @@ CREATE TABLE public.option_type (
 ALTER TABLE public.option_type OWNER TO dagaz;
 
 --
--- TOC entry 239 (class 1259 OID 1810309)
+-- TOC entry 237 (class 1259 OID 1810309)
 -- Name: param_type; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1499,7 +1459,7 @@ CREATE TABLE public.param_type (
 ALTER TABLE public.param_type OWNER TO dagaz;
 
 --
--- TOC entry 240 (class 1259 OID 1810313)
+-- TOC entry 238 (class 1259 OID 1810313)
 -- Name: quest; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1515,7 +1475,7 @@ CREATE TABLE public.quest (
 ALTER TABLE public.quest OWNER TO dagaz;
 
 --
--- TOC entry 241 (class 1259 OID 1810319)
+-- TOC entry 239 (class 1259 OID 1810319)
 -- Name: quest_context; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1530,7 +1490,7 @@ CREATE TABLE public.quest_context (
 ALTER TABLE public.quest_context OWNER TO dagaz;
 
 --
--- TOC entry 242 (class 1259 OID 1810322)
+-- TOC entry 240 (class 1259 OID 1810322)
 -- Name: quest_context_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -1546,8 +1506,8 @@ CREATE SEQUENCE public.quest_context_id_seq
 ALTER TABLE public.quest_context_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4384 (class 0 OID 0)
--- Dependencies: 242
+-- TOC entry 4367 (class 0 OID 0)
+-- Dependencies: 240
 -- Name: quest_context_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -1555,7 +1515,7 @@ ALTER SEQUENCE public.quest_context_id_seq OWNED BY public.quest_context.id;
 
 
 --
--- TOC entry 243 (class 1259 OID 1810324)
+-- TOC entry 241 (class 1259 OID 1810324)
 -- Name: quest_grant; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1571,7 +1531,7 @@ CREATE TABLE public.quest_grant (
 ALTER TABLE public.quest_grant OWNER TO dagaz;
 
 --
--- TOC entry 244 (class 1259 OID 1810328)
+-- TOC entry 242 (class 1259 OID 1810328)
 -- Name: quest_grant_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -1587,8 +1547,8 @@ CREATE SEQUENCE public.quest_grant_id_seq
 ALTER TABLE public.quest_grant_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4385 (class 0 OID 0)
--- Dependencies: 244
+-- TOC entry 4368 (class 0 OID 0)
+-- Dependencies: 242
 -- Name: quest_grant_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -1596,7 +1556,7 @@ ALTER SEQUENCE public.quest_grant_id_seq OWNED BY public.quest_grant.id;
 
 
 --
--- TOC entry 245 (class 1259 OID 1810330)
+-- TOC entry 243 (class 1259 OID 1810330)
 -- Name: quest_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -1612,8 +1572,8 @@ CREATE SEQUENCE public.quest_id_seq
 ALTER TABLE public.quest_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4386 (class 0 OID 0)
--- Dependencies: 245
+-- TOC entry 4369 (class 0 OID 0)
+-- Dependencies: 243
 -- Name: quest_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -1621,7 +1581,7 @@ ALTER SEQUENCE public.quest_id_seq OWNED BY public.quest.id;
 
 
 --
--- TOC entry 246 (class 1259 OID 1810332)
+-- TOC entry 244 (class 1259 OID 1810332)
 -- Name: quest_info; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1637,7 +1597,7 @@ CREATE TABLE public.quest_info (
 ALTER TABLE public.quest_info OWNER TO dagaz;
 
 --
--- TOC entry 247 (class 1259 OID 1810338)
+-- TOC entry 245 (class 1259 OID 1810338)
 -- Name: quest_info_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -1653,8 +1613,8 @@ CREATE SEQUENCE public.quest_info_id_seq
 ALTER TABLE public.quest_info_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4387 (class 0 OID 0)
--- Dependencies: 247
+-- TOC entry 4370 (class 0 OID 0)
+-- Dependencies: 245
 -- Name: quest_info_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -1662,7 +1622,7 @@ ALTER SEQUENCE public.quest_info_id_seq OWNED BY public.quest_info.id;
 
 
 --
--- TOC entry 248 (class 1259 OID 1810340)
+-- TOC entry 246 (class 1259 OID 1810340)
 -- Name: quest_param; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1677,7 +1637,7 @@ CREATE TABLE public.quest_param (
 ALTER TABLE public.quest_param OWNER TO dagaz;
 
 --
--- TOC entry 249 (class 1259 OID 1810346)
+-- TOC entry 247 (class 1259 OID 1810346)
 -- Name: quest_param_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -1693,8 +1653,8 @@ CREATE SEQUENCE public.quest_param_id_seq
 ALTER TABLE public.quest_param_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4388 (class 0 OID 0)
--- Dependencies: 249
+-- TOC entry 4371 (class 0 OID 0)
+-- Dependencies: 247
 -- Name: quest_param_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -1702,7 +1662,7 @@ ALTER SEQUENCE public.quest_param_id_seq OWNED BY public.quest_param.id;
 
 
 --
--- TOC entry 250 (class 1259 OID 1810348)
+-- TOC entry 248 (class 1259 OID 1810348)
 -- Name: quest_stat; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1720,7 +1680,7 @@ CREATE TABLE public.quest_stat (
 ALTER TABLE public.quest_stat OWNER TO dagaz;
 
 --
--- TOC entry 251 (class 1259 OID 1810355)
+-- TOC entry 249 (class 1259 OID 1810355)
 -- Name: quest_stat_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -1736,8 +1696,8 @@ CREATE SEQUENCE public.quest_stat_id_seq
 ALTER TABLE public.quest_stat_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4389 (class 0 OID 0)
--- Dependencies: 251
+-- TOC entry 4372 (class 0 OID 0)
+-- Dependencies: 249
 -- Name: quest_stat_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -1745,7 +1705,7 @@ ALTER SEQUENCE public.quest_stat_id_seq OWNED BY public.quest_stat.id;
 
 
 --
--- TOC entry 252 (class 1259 OID 1810357)
+-- TOC entry 250 (class 1259 OID 1810357)
 -- Name: quest_subs; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1760,7 +1720,7 @@ CREATE TABLE public.quest_subs (
 ALTER TABLE public.quest_subs OWNER TO dagaz;
 
 --
--- TOC entry 253 (class 1259 OID 1810360)
+-- TOC entry 251 (class 1259 OID 1810360)
 -- Name: quest_subs_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -1776,8 +1736,8 @@ CREATE SEQUENCE public.quest_subs_id_seq
 ALTER TABLE public.quest_subs_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4390 (class 0 OID 0)
--- Dependencies: 253
+-- TOC entry 4373 (class 0 OID 0)
+-- Dependencies: 251
 -- Name: quest_subs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -1785,7 +1745,7 @@ ALTER SEQUENCE public.quest_subs_id_seq OWNED BY public.quest_subs.id;
 
 
 --
--- TOC entry 254 (class 1259 OID 1810362)
+-- TOC entry 252 (class 1259 OID 1810362)
 -- Name: request; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1801,7 +1761,7 @@ CREATE TABLE public.request (
 ALTER TABLE public.request OWNER TO dagaz;
 
 --
--- TOC entry 255 (class 1259 OID 1810365)
+-- TOC entry 253 (class 1259 OID 1810365)
 -- Name: request_param; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1817,7 +1777,7 @@ CREATE TABLE public.request_param (
 ALTER TABLE public.request_param OWNER TO dagaz;
 
 --
--- TOC entry 256 (class 1259 OID 1810368)
+-- TOC entry 254 (class 1259 OID 1810368)
 -- Name: response; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1833,7 +1793,7 @@ CREATE TABLE public.response (
 ALTER TABLE public.response OWNER TO dagaz;
 
 --
--- TOC entry 257 (class 1259 OID 1810371)
+-- TOC entry 255 (class 1259 OID 1810371)
 -- Name: response_param; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1848,7 +1808,7 @@ CREATE TABLE public.response_param (
 ALTER TABLE public.response_param OWNER TO dagaz;
 
 --
--- TOC entry 258 (class 1259 OID 1810374)
+-- TOC entry 256 (class 1259 OID 1810374)
 -- Name: script; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1862,7 +1822,7 @@ CREATE TABLE public.script (
 ALTER TABLE public.script OWNER TO dagaz;
 
 --
--- TOC entry 259 (class 1259 OID 1810377)
+-- TOC entry 257 (class 1259 OID 1810377)
 -- Name: script_param; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1877,7 +1837,7 @@ CREATE TABLE public.script_param (
 ALTER TABLE public.script_param OWNER TO dagaz;
 
 --
--- TOC entry 260 (class 1259 OID 1810380)
+-- TOC entry 258 (class 1259 OID 1810380)
 -- Name: server; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1892,7 +1852,7 @@ CREATE TABLE public.server (
 ALTER TABLE public.server OWNER TO dagaz;
 
 --
--- TOC entry 261 (class 1259 OID 1810386)
+-- TOC entry 259 (class 1259 OID 1810386)
 -- Name: server_option; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1907,7 +1867,7 @@ CREATE TABLE public.server_option (
 ALTER TABLE public.server_option OWNER TO dagaz;
 
 --
--- TOC entry 262 (class 1259 OID 1810392)
+-- TOC entry 260 (class 1259 OID 1810392)
 -- Name: server_type; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1920,7 +1880,7 @@ CREATE TABLE public.server_type (
 ALTER TABLE public.server_type OWNER TO dagaz;
 
 --
--- TOC entry 263 (class 1259 OID 1810395)
+-- TOC entry 261 (class 1259 OID 1810395)
 -- Name: user_param; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1937,7 +1897,7 @@ CREATE TABLE public.user_param (
 ALTER TABLE public.user_param OWNER TO dagaz;
 
 --
--- TOC entry 264 (class 1259 OID 1810402)
+-- TOC entry 262 (class 1259 OID 1810402)
 -- Name: user_param_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -1953,8 +1913,8 @@ CREATE SEQUENCE public.user_param_id_seq
 ALTER TABLE public.user_param_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4391 (class 0 OID 0)
--- Dependencies: 264
+-- TOC entry 4374 (class 0 OID 0)
+-- Dependencies: 262
 -- Name: user_param_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -1962,7 +1922,7 @@ ALTER SEQUENCE public.user_param_id_seq OWNED BY public.user_param.id;
 
 
 --
--- TOC entry 265 (class 1259 OID 1810404)
+-- TOC entry 263 (class 1259 OID 1810404)
 -- Name: users; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -1983,7 +1943,7 @@ CREATE TABLE public.users (
 ALTER TABLE public.users OWNER TO dagaz;
 
 --
--- TOC entry 266 (class 1259 OID 1810410)
+-- TOC entry 264 (class 1259 OID 1810410)
 -- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -1999,8 +1959,8 @@ CREATE SEQUENCE public.users_id_seq
 ALTER TABLE public.users_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4392 (class 0 OID 0)
--- Dependencies: 266
+-- TOC entry 4375 (class 0 OID 0)
+-- Dependencies: 264
 -- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -2008,7 +1968,7 @@ ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
 
 
 --
--- TOC entry 267 (class 1259 OID 1810412)
+-- TOC entry 265 (class 1259 OID 1810412)
 -- Name: watch; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -2025,7 +1985,7 @@ CREATE TABLE public.watch (
 ALTER TABLE public.watch OWNER TO dagaz;
 
 --
--- TOC entry 268 (class 1259 OID 1810415)
+-- TOC entry 266 (class 1259 OID 1810415)
 -- Name: watch_id_seq; Type: SEQUENCE; Schema: public; Owner: dagaz
 --
 
@@ -2041,8 +2001,8 @@ CREATE SEQUENCE public.watch_id_seq
 ALTER TABLE public.watch_id_seq OWNER TO dagaz;
 
 --
--- TOC entry 4393 (class 0 OID 0)
--- Dependencies: 268
+-- TOC entry 4376 (class 0 OID 0)
+-- Dependencies: 266
 -- Name: watch_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: dagaz
 --
 
@@ -2050,7 +2010,7 @@ ALTER SEQUENCE public.watch_id_seq OWNED BY public.watch.id;
 
 
 --
--- TOC entry 269 (class 1259 OID 1810417)
+-- TOC entry 267 (class 1259 OID 1810417)
 -- Name: watch_type; Type: TABLE; Schema: public; Owner: dagaz
 --
 
@@ -2063,7 +2023,7 @@ CREATE TABLE public.watch_type (
 ALTER TABLE public.watch_type OWNER TO dagaz;
 
 --
--- TOC entry 3837 (class 2604 OID 1810420)
+-- TOC entry 3831 (class 2604 OID 1810420)
 -- Name: account id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2071,15 +2031,7 @@ ALTER TABLE ONLY public.account ALTER COLUMN id SET DEFAULT nextval('public.acco
 
 
 --
--- TOC entry 3839 (class 2604 OID 1810421)
--- Name: action_log id; Type: DEFAULT; Schema: public; Owner: dagaz
---
-
-ALTER TABLE ONLY public.action_log ALTER COLUMN id SET DEFAULT nextval('public.action_log_id_seq'::regclass);
-
-
---
--- TOC entry 3840 (class 2604 OID 1810422)
+-- TOC entry 3832 (class 2604 OID 1810422)
 -- Name: client_message id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2087,7 +2039,7 @@ ALTER TABLE ONLY public.client_message ALTER COLUMN id SET DEFAULT nextval('publ
 
 
 --
--- TOC entry 3880 (class 2604 OID 1813573)
+-- TOC entry 3872 (class 2604 OID 1813573)
 -- Name: command_param id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2095,7 +2047,7 @@ ALTER TABLE ONLY public.command_param ALTER COLUMN id SET DEFAULT nextval('publi
 
 
 --
--- TOC entry 3842 (class 2604 OID 1810423)
+-- TOC entry 3834 (class 2604 OID 1810423)
 -- Name: command_queue id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2103,7 +2055,7 @@ ALTER TABLE ONLY public.command_queue ALTER COLUMN id SET DEFAULT nextval('publi
 
 
 --
--- TOC entry 3844 (class 2604 OID 1810424)
+-- TOC entry 3836 (class 2604 OID 1810424)
 -- Name: common_context id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2111,7 +2063,7 @@ ALTER TABLE ONLY public.common_context ALTER COLUMN id SET DEFAULT nextval('publ
 
 
 --
--- TOC entry 3845 (class 2604 OID 1810425)
+-- TOC entry 3837 (class 2604 OID 1810425)
 -- Name: edge id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2119,7 +2071,7 @@ ALTER TABLE ONLY public.edge ALTER COLUMN id SET DEFAULT nextval('public.edge_id
 
 
 --
--- TOC entry 3847 (class 2604 OID 1810426)
+-- TOC entry 3839 (class 2604 OID 1810426)
 -- Name: edge_cnt id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2127,7 +2079,7 @@ ALTER TABLE ONLY public.edge_cnt ALTER COLUMN id SET DEFAULT nextval('public.edg
 
 
 --
--- TOC entry 3848 (class 2604 OID 1810427)
+-- TOC entry 3840 (class 2604 OID 1810427)
 -- Name: edge_info id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2135,7 +2087,7 @@ ALTER TABLE ONLY public.edge_info ALTER COLUMN id SET DEFAULT nextval('public.ed
 
 
 --
--- TOC entry 3849 (class 2604 OID 1810428)
+-- TOC entry 3841 (class 2604 OID 1810428)
 -- Name: edge_param id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2143,7 +2095,7 @@ ALTER TABLE ONLY public.edge_param ALTER COLUMN id SET DEFAULT nextval('public.e
 
 
 --
--- TOC entry 3851 (class 2604 OID 1810429)
+-- TOC entry 3843 (class 2604 OID 1810429)
 -- Name: job_data id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2151,7 +2103,7 @@ ALTER TABLE ONLY public.job_data ALTER COLUMN id SET DEFAULT nextval('public.job
 
 
 --
--- TOC entry 3852 (class 2604 OID 1810430)
+-- TOC entry 3844 (class 2604 OID 1810430)
 -- Name: localized_string id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2159,7 +2111,7 @@ ALTER TABLE ONLY public.localized_string ALTER COLUMN id SET DEFAULT nextval('pu
 
 
 --
--- TOC entry 3855 (class 2604 OID 1810431)
+-- TOC entry 3847 (class 2604 OID 1810431)
 -- Name: message id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2167,7 +2119,7 @@ ALTER TABLE ONLY public.message ALTER COLUMN id SET DEFAULT nextval('public.mess
 
 
 --
--- TOC entry 3856 (class 2604 OID 1810432)
+-- TOC entry 3848 (class 2604 OID 1810432)
 -- Name: migrations id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2175,7 +2127,7 @@ ALTER TABLE ONLY public.migrations ALTER COLUMN id SET DEFAULT nextval('public.m
 
 
 --
--- TOC entry 3857 (class 2604 OID 1810433)
+-- TOC entry 3849 (class 2604 OID 1810433)
 -- Name: node id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2183,7 +2135,7 @@ ALTER TABLE ONLY public.node ALTER COLUMN id SET DEFAULT nextval('public.node_id
 
 
 --
--- TOC entry 3858 (class 2604 OID 1810434)
+-- TOC entry 3850 (class 2604 OID 1810434)
 -- Name: node_image id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2191,7 +2143,7 @@ ALTER TABLE ONLY public.node_image ALTER COLUMN id SET DEFAULT nextval('public.n
 
 
 --
--- TOC entry 3859 (class 2604 OID 1810435)
+-- TOC entry 3851 (class 2604 OID 1810435)
 -- Name: node_info id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2199,7 +2151,7 @@ ALTER TABLE ONLY public.node_info ALTER COLUMN id SET DEFAULT nextval('public.no
 
 
 --
--- TOC entry 3861 (class 2604 OID 1810436)
+-- TOC entry 3853 (class 2604 OID 1810436)
 -- Name: quest id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2207,7 +2159,7 @@ ALTER TABLE ONLY public.quest ALTER COLUMN id SET DEFAULT nextval('public.quest_
 
 
 --
--- TOC entry 3862 (class 2604 OID 1810437)
+-- TOC entry 3854 (class 2604 OID 1810437)
 -- Name: quest_context id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2215,7 +2167,7 @@ ALTER TABLE ONLY public.quest_context ALTER COLUMN id SET DEFAULT nextval('publi
 
 
 --
--- TOC entry 3864 (class 2604 OID 1810438)
+-- TOC entry 3856 (class 2604 OID 1810438)
 -- Name: quest_grant id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2223,7 +2175,7 @@ ALTER TABLE ONLY public.quest_grant ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 3865 (class 2604 OID 1810439)
+-- TOC entry 3857 (class 2604 OID 1810439)
 -- Name: quest_info id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2231,7 +2183,7 @@ ALTER TABLE ONLY public.quest_info ALTER COLUMN id SET DEFAULT nextval('public.q
 
 
 --
--- TOC entry 3866 (class 2604 OID 1810440)
+-- TOC entry 3858 (class 2604 OID 1810440)
 -- Name: quest_param id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2239,7 +2191,7 @@ ALTER TABLE ONLY public.quest_param ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 3871 (class 2604 OID 1810441)
+-- TOC entry 3863 (class 2604 OID 1810441)
 -- Name: quest_stat id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2247,7 +2199,7 @@ ALTER TABLE ONLY public.quest_stat ALTER COLUMN id SET DEFAULT nextval('public.q
 
 
 --
--- TOC entry 3872 (class 2604 OID 1810442)
+-- TOC entry 3864 (class 2604 OID 1810442)
 -- Name: quest_subs id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2255,7 +2207,7 @@ ALTER TABLE ONLY public.quest_subs ALTER COLUMN id SET DEFAULT nextval('public.q
 
 
 --
--- TOC entry 3874 (class 2604 OID 1810443)
+-- TOC entry 3866 (class 2604 OID 1810443)
 -- Name: user_param id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2263,7 +2215,7 @@ ALTER TABLE ONLY public.user_param ALTER COLUMN id SET DEFAULT nextval('public.u
 
 
 --
--- TOC entry 3878 (class 2604 OID 1810444)
+-- TOC entry 3870 (class 2604 OID 1810444)
 -- Name: users id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2271,7 +2223,7 @@ ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_
 
 
 --
--- TOC entry 3879 (class 2604 OID 1810445)
+-- TOC entry 3871 (class 2604 OID 1810445)
 -- Name: watch id; Type: DEFAULT; Schema: public; Owner: dagaz
 --
 
@@ -2279,7 +2231,7 @@ ALTER TABLE ONLY public.watch ALTER COLUMN id SET DEFAULT nextval('public.watch_
 
 
 --
--- TOC entry 4284 (class 0 OID 1810152)
+-- TOC entry 4270 (class 0 OID 1810152)
 -- Dependencies: 196
 -- Data for Name: account; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
@@ -2289,7 +2241,7 @@ COPY public.account (id, server_id, user_id, created, deleted, context_id) FROM 
 
 
 --
--- TOC entry 4286 (class 0 OID 1810158)
+-- TOC entry 4272 (class 0 OID 1810158)
 -- Dependencies: 198
 -- Data for Name: action; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
@@ -2324,7 +2276,6 @@ COPY public.action (id, type_id, script_id, parent_id, order_num, follow_to, par
 102	17	1	101	1	\N	\N
 217	1	2	208	1	\N	\N
 218	1	2	214	1	\N	\N
-601	18	6	\N	1	\N	\N
 610	1	6	601	1	201	\N
 620	2	6	601	2	\N	9
 621	2	6	620	1	\N	12
@@ -2339,33 +2290,29 @@ COPY public.action (id, type_id, script_id, parent_id, order_num, follow_to, par
 703	1	7	702	1	\N	\N
 704	5	7	701	2	\N	7
 705	1	7	704	1	\N	\N
+640	3	6	\N	1	\N	\N
+641	4	6	640	2	\N	\N
+642	1	6	641	1	\N	\N
+643	4	6	640	1	\N	\N
+601	18	6	643	1	\N	\N
 \.
 
 
 --
--- TOC entry 4287 (class 0 OID 1810161)
--- Dependencies: 199
--- Data for Name: action_log; Type: TABLE DATA; Schema: public; Owner: dagaz
---
-
-COPY public.action_log (id, account_id, action_id, event_time) FROM stdin;
-\.
-
-
---
--- TOC entry 4361 (class 0 OID 1836315)
--- Dependencies: 273
+-- TOC entry 4345 (class 0 OID 1836315)
+-- Dependencies: 271
 -- Data for Name: action_param; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
 COPY public.action_param (id, action_id, type_id, value, paramtype_id) FROM stdin;
 1	701	13	3	\N
+2	640	13	2	\N
 \.
 
 
 --
--- TOC entry 4289 (class 0 OID 1810167)
--- Dependencies: 201
+-- TOC entry 4273 (class 0 OID 1810167)
+-- Dependencies: 199
 -- Data for Name: action_type; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2391,8 +2338,8 @@ COPY public.action_type (id, name) FROM stdin;
 
 
 --
--- TOC entry 4358 (class 0 OID 1813504)
--- Dependencies: 270
+-- TOC entry 4342 (class 0 OID 1813504)
+-- Dependencies: 268
 -- Data for Name: clear_params; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2410,8 +2357,8 @@ COPY public.clear_params (id, paramtype_id, action_id) FROM stdin;
 
 
 --
--- TOC entry 4290 (class 0 OID 1810170)
--- Dependencies: 202
+-- TOC entry 4274 (class 0 OID 1810170)
+-- Dependencies: 200
 -- Data for Name: client_message; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2420,8 +2367,8 @@ COPY public.client_message (id, parent_id, message_id) FROM stdin;
 
 
 --
--- TOC entry 4360 (class 0 OID 1813570)
--- Dependencies: 272
+-- TOC entry 4344 (class 0 OID 1813570)
+-- Dependencies: 270
 -- Data for Name: command_param; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2430,8 +2377,8 @@ COPY public.command_param (id, command_id, paramtype_id, value) FROM stdin;
 
 
 --
--- TOC entry 4292 (class 0 OID 1810175)
--- Dependencies: 204
+-- TOC entry 4276 (class 0 OID 1810175)
+-- Dependencies: 202
 -- Data for Name: command_queue; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2440,8 +2387,8 @@ COPY public.command_queue (id, context_id, action_id, created, data) FROM stdin;
 
 
 --
--- TOC entry 4294 (class 0 OID 1810184)
--- Dependencies: 206
+-- TOC entry 4278 (class 0 OID 1810184)
+-- Dependencies: 204
 -- Data for Name: common_context; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2450,8 +2397,8 @@ COPY public.common_context (id, action_id, wait_for, scheduled, delete_message, 
 
 
 --
--- TOC entry 4296 (class 0 OID 1810190)
--- Dependencies: 208
+-- TOC entry 4280 (class 0 OID 1810190)
+-- Dependencies: 206
 -- Data for Name: db_action; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2470,8 +2417,8 @@ COPY public.db_action (id, result_id, result_value, order_num, action_id) FROM s
 
 
 --
--- TOC entry 4297 (class 0 OID 1810193)
--- Dependencies: 209
+-- TOC entry 4281 (class 0 OID 1810193)
+-- Dependencies: 207
 -- Data for Name: db_param; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2489,8 +2436,8 @@ COPY public.db_param (id, proc_id, paramtype_id, value, order_num) FROM stdin;
 
 
 --
--- TOC entry 4298 (class 0 OID 1810196)
--- Dependencies: 210
+-- TOC entry 4282 (class 0 OID 1810196)
+-- Dependencies: 208
 -- Data for Name: db_result; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2512,8 +2459,8 @@ COPY public.db_result (id, proc_id, name, paramtype_id) FROM stdin;
 
 
 --
--- TOC entry 4299 (class 0 OID 1810199)
--- Dependencies: 211
+-- TOC entry 4283 (class 0 OID 1810199)
+-- Dependencies: 209
 -- Data for Name: dbproc; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2529,8 +2476,8 @@ COPY public.dbproc (id, actiontype_id, name) FROM stdin;
 
 
 --
--- TOC entry 4300 (class 0 OID 1810202)
--- Dependencies: 212
+-- TOC entry 4284 (class 0 OID 1810202)
+-- Dependencies: 210
 -- Data for Name: edge; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2539,8 +2486,8 @@ COPY public.edge (id, quest_id, from_id, to_id, en, ru, rule, max_cnt, order_num
 
 
 --
--- TOC entry 4301 (class 0 OID 1810208)
--- Dependencies: 213
+-- TOC entry 4285 (class 0 OID 1810208)
+-- Dependencies: 211
 -- Data for Name: edge_cnt; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2549,8 +2496,8 @@ COPY public.edge_cnt (id, edge_id, context_id, max_cnt) FROM stdin;
 
 
 --
--- TOC entry 4304 (class 0 OID 1810216)
--- Dependencies: 216
+-- TOC entry 4288 (class 0 OID 1810216)
+-- Dependencies: 214
 -- Data for Name: edge_info; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2559,8 +2506,8 @@ COPY public.edge_info (id, edge_id, en, ru) FROM stdin;
 
 
 --
--- TOC entry 4306 (class 0 OID 1810224)
--- Dependencies: 218
+-- TOC entry 4290 (class 0 OID 1810224)
+-- Dependencies: 216
 -- Data for Name: edge_param; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2569,8 +2516,8 @@ COPY public.edge_param (id, edge_id, param_id, rule) FROM stdin;
 
 
 --
--- TOC entry 4308 (class 0 OID 1810229)
--- Dependencies: 220
+-- TOC entry 4292 (class 0 OID 1810229)
+-- Dependencies: 218
 -- Data for Name: game; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2579,8 +2526,8 @@ COPY public.game (id, parent_id, name, description) FROM stdin;
 
 
 --
--- TOC entry 4309 (class 0 OID 1810235)
--- Dependencies: 221
+-- TOC entry 4293 (class 0 OID 1810235)
+-- Dependencies: 219
 -- Data for Name: info_type; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2591,8 +2538,8 @@ COPY public.info_type (id, name) FROM stdin;
 
 
 --
--- TOC entry 4310 (class 0 OID 1810238)
--- Dependencies: 222
+-- TOC entry 4294 (class 0 OID 1810238)
+-- Dependencies: 220
 -- Data for Name: job; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2602,8 +2549,8 @@ COPY public.job (id, name, request_id, proc_id) FROM stdin;
 
 
 --
--- TOC entry 4311 (class 0 OID 1810241)
--- Dependencies: 223
+-- TOC entry 4295 (class 0 OID 1810241)
+-- Dependencies: 221
 -- Data for Name: job_data; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2612,8 +2559,8 @@ COPY public.job_data (id, job_id, result_code, data, created, server_id) FROM st
 
 
 --
--- TOC entry 4313 (class 0 OID 1810250)
--- Dependencies: 225
+-- TOC entry 4297 (class 0 OID 1810250)
+-- Dependencies: 223
 -- Data for Name: localized_string; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2678,12 +2625,20 @@ COPY public.localized_string (id, action_id, locale, message) FROM stdin;
 67	704	ru	ru
 68	704	en	ru
 69	705	ru	Язык сконфигурирован: Русский
+70	640	ru	Вы действительно хотите редактировать настройки профиля?
+71	640	en	Are you sure you want to edit your profile settings?
+72	641	ru	Нет
+73	641	en	No
+74	642	ru	Редактирование профиля отменено
+75	642	en	Profile editing canceled
+76	643	ru	Да
+77	643	en	Yes
 \.
 
 
 --
--- TOC entry 4315 (class 0 OID 1810264)
--- Dependencies: 227
+-- TOC entry 4299 (class 0 OID 1810264)
+-- Dependencies: 225
 -- Data for Name: message; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2692,8 +2647,8 @@ COPY public.message (id, user_id, send_to, locale, event_time, message_id, sched
 
 
 --
--- TOC entry 4317 (class 0 OID 1810274)
--- Dependencies: 229
+-- TOC entry 4301 (class 0 OID 1810274)
+-- Dependencies: 227
 -- Data for Name: migrations; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2706,8 +2661,8 @@ COPY public.migrations (id, "timestamp", name) FROM stdin;
 
 
 --
--- TOC entry 4319 (class 0 OID 1810282)
--- Dependencies: 231
+-- TOC entry 4303 (class 0 OID 1810282)
+-- Dependencies: 229
 -- Data for Name: node; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2716,8 +2671,8 @@ COPY public.node (id, quest_id, type_id, image_id) FROM stdin;
 
 
 --
--- TOC entry 4321 (class 0 OID 1810287)
--- Dependencies: 233
+-- TOC entry 4305 (class 0 OID 1810287)
+-- Dependencies: 231
 -- Data for Name: node_image; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2726,8 +2681,8 @@ COPY public.node_image (id, filename) FROM stdin;
 
 
 --
--- TOC entry 4323 (class 0 OID 1810295)
--- Dependencies: 235
+-- TOC entry 4307 (class 0 OID 1810295)
+-- Dependencies: 233
 -- Data for Name: node_info; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2736,8 +2691,8 @@ COPY public.node_info (id, node_id, image_id, en, ru, rule, order_num) FROM stdi
 
 
 --
--- TOC entry 4325 (class 0 OID 1810303)
--- Dependencies: 237
+-- TOC entry 4309 (class 0 OID 1810303)
+-- Dependencies: 235
 -- Data for Name: node_type; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2750,8 +2705,8 @@ COPY public.node_type (id, name) FROM stdin;
 
 
 --
--- TOC entry 4326 (class 0 OID 1810306)
--- Dependencies: 238
+-- TOC entry 4310 (class 0 OID 1810306)
+-- Dependencies: 236
 -- Data for Name: option_type; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2761,8 +2716,8 @@ COPY public.option_type (id, name) FROM stdin;
 
 
 --
--- TOC entry 4327 (class 0 OID 1810309)
--- Dependencies: 239
+-- TOC entry 4311 (class 0 OID 1810309)
+-- Dependencies: 237
 -- Data for Name: param_type; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2783,8 +2738,8 @@ COPY public.param_type (id, name, is_hidden) FROM stdin;
 
 
 --
--- TOC entry 4328 (class 0 OID 1810313)
--- Dependencies: 240
+-- TOC entry 4312 (class 0 OID 1810313)
+-- Dependencies: 238
 -- Data for Name: quest; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2793,8 +2748,8 @@ COPY public.quest (id, account_id, en, ru, def_cnt) FROM stdin;
 
 
 --
--- TOC entry 4329 (class 0 OID 1810319)
--- Dependencies: 241
+-- TOC entry 4313 (class 0 OID 1810319)
+-- Dependencies: 239
 -- Data for Name: quest_context; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2803,8 +2758,8 @@ COPY public.quest_context (id, action_id, node_id, image_id) FROM stdin;
 
 
 --
--- TOC entry 4331 (class 0 OID 1810324)
--- Dependencies: 243
+-- TOC entry 4315 (class 0 OID 1810324)
+-- Dependencies: 241
 -- Data for Name: quest_grant; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2813,8 +2768,8 @@ COPY public.quest_grant (id, quest_id, grantor_id, grant_to, created) FROM stdin
 
 
 --
--- TOC entry 4334 (class 0 OID 1810332)
--- Dependencies: 246
+-- TOC entry 4318 (class 0 OID 1810332)
+-- Dependencies: 244
 -- Data for Name: quest_info; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2823,8 +2778,8 @@ COPY public.quest_info (id, quest_id, type_id, en, ru) FROM stdin;
 
 
 --
--- TOC entry 4336 (class 0 OID 1810340)
--- Dependencies: 248
+-- TOC entry 4320 (class 0 OID 1810340)
+-- Dependencies: 246
 -- Data for Name: quest_param; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2833,8 +2788,8 @@ COPY public.quest_param (id, quest_id, name, order_num) FROM stdin;
 
 
 --
--- TOC entry 4338 (class 0 OID 1810348)
--- Dependencies: 250
+-- TOC entry 4322 (class 0 OID 1810348)
+-- Dependencies: 248
 -- Data for Name: quest_stat; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2843,8 +2798,8 @@ COPY public.quest_stat (id, account_id, quest_id, "all", win, bonus, created) FR
 
 
 --
--- TOC entry 4340 (class 0 OID 1810357)
--- Dependencies: 252
+-- TOC entry 4324 (class 0 OID 1810357)
+-- Dependencies: 250
 -- Data for Name: quest_subs; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2853,8 +2808,8 @@ COPY public.quest_subs (id, quest_id, from_str, to_str) FROM stdin;
 
 
 --
--- TOC entry 4342 (class 0 OID 1810362)
--- Dependencies: 254
+-- TOC entry 4326 (class 0 OID 1810362)
+-- Dependencies: 252
 -- Data for Name: request; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2868,8 +2823,8 @@ COPY public.request (id, server_id, request_type, url, actiontype_id) FROM stdin
 
 
 --
--- TOC entry 4343 (class 0 OID 1810365)
--- Dependencies: 255
+-- TOC entry 4327 (class 0 OID 1810365)
+-- Dependencies: 253
 -- Data for Name: request_param; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2893,8 +2848,8 @@ COPY public.request_param (id, request_id, paramtype_id, param_name, param_value
 
 
 --
--- TOC entry 4344 (class 0 OID 1810368)
--- Dependencies: 256
+-- TOC entry 4328 (class 0 OID 1810368)
+-- Dependencies: 254
 -- Data for Name: response; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2911,8 +2866,8 @@ COPY public.response (id, request_id, result_code, order_num, action_id) FROM st
 
 
 --
--- TOC entry 4345 (class 0 OID 1810371)
--- Dependencies: 257
+-- TOC entry 4329 (class 0 OID 1810371)
+-- Dependencies: 255
 -- Data for Name: response_param; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2925,8 +2880,8 @@ COPY public.response_param (id, response_id, paramtype_id, param_name) FROM stdi
 
 
 --
--- TOC entry 4346 (class 0 OID 1810374)
--- Dependencies: 258
+-- TOC entry 4330 (class 0 OID 1810374)
+-- Dependencies: 256
 -- Data for Name: script; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2942,8 +2897,8 @@ COPY public.script (id, name, command) FROM stdin;
 
 
 --
--- TOC entry 4347 (class 0 OID 1810377)
--- Dependencies: 259
+-- TOC entry 4331 (class 0 OID 1810377)
+-- Dependencies: 257
 -- Data for Name: script_param; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2954,8 +2909,8 @@ COPY public.script_param (id, script_id, paramtype_id, order_num) FROM stdin;
 
 
 --
--- TOC entry 4348 (class 0 OID 1810380)
--- Dependencies: 260
+-- TOC entry 4332 (class 0 OID 1810380)
+-- Dependencies: 258
 -- Data for Name: server; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2966,8 +2921,8 @@ COPY public.server (id, type_id, url, api) FROM stdin;
 
 
 --
--- TOC entry 4349 (class 0 OID 1810386)
--- Dependencies: 261
+-- TOC entry 4333 (class 0 OID 1810386)
+-- Dependencies: 259
 -- Data for Name: server_option; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2977,8 +2932,8 @@ COPY public.server_option (id, type_id, server_id, value) FROM stdin;
 
 
 --
--- TOC entry 4350 (class 0 OID 1810392)
--- Dependencies: 262
+-- TOC entry 4334 (class 0 OID 1810392)
+-- Dependencies: 260
 -- Data for Name: server_type; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2989,8 +2944,8 @@ COPY public.server_type (id, name) FROM stdin;
 
 
 --
--- TOC entry 4351 (class 0 OID 1810395)
--- Dependencies: 263
+-- TOC entry 4335 (class 0 OID 1810395)
+-- Dependencies: 261
 -- Data for Name: user_param; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -2999,8 +2954,8 @@ COPY public.user_param (id, type_id, user_id, value, created, account_id) FROM s
 
 
 --
--- TOC entry 4353 (class 0 OID 1810404)
--- Dependencies: 265
+-- TOC entry 4337 (class 0 OID 1810404)
+-- Dependencies: 263
 -- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -3009,8 +2964,8 @@ COPY public.users (id, username, firstname, created, updated, lastname, chat_id,
 
 
 --
--- TOC entry 4355 (class 0 OID 1810412)
--- Dependencies: 267
+-- TOC entry 4339 (class 0 OID 1810412)
+-- Dependencies: 265
 -- Data for Name: watch; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -3019,8 +2974,8 @@ COPY public.watch (id, user_id, server_id, type_id, parent_id, value) FROM stdin
 
 
 --
--- TOC entry 4357 (class 0 OID 1810417)
--- Dependencies: 269
+-- TOC entry 4341 (class 0 OID 1810417)
+-- Dependencies: 267
 -- Data for Name: watch_type; Type: TABLE DATA; Schema: public; Owner: dagaz
 --
 
@@ -3033,7 +2988,7 @@ COPY public.watch_type (id, name) FROM stdin;
 
 
 --
--- TOC entry 4394 (class 0 OID 0)
+-- TOC entry 4377 (class 0 OID 0)
 -- Dependencies: 197
 -- Name: account_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
@@ -3042,17 +2997,8 @@ SELECT pg_catalog.setval('public.account_id_seq', 382, true);
 
 
 --
--- TOC entry 4395 (class 0 OID 0)
--- Dependencies: 200
--- Name: action_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
---
-
-SELECT pg_catalog.setval('public.action_log_id_seq', 1, false);
-
-
---
--- TOC entry 4396 (class 0 OID 0)
--- Dependencies: 203
+-- TOC entry 4378 (class 0 OID 0)
+-- Dependencies: 201
 -- Name: client_message_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3060,8 +3006,8 @@ SELECT pg_catalog.setval('public.client_message_id_seq', 64, true);
 
 
 --
--- TOC entry 4397 (class 0 OID 0)
--- Dependencies: 271
+-- TOC entry 4379 (class 0 OID 0)
+-- Dependencies: 269
 -- Name: command_param_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3069,8 +3015,8 @@ SELECT pg_catalog.setval('public.command_param_id_seq', 4, true);
 
 
 --
--- TOC entry 4398 (class 0 OID 0)
--- Dependencies: 205
+-- TOC entry 4380 (class 0 OID 0)
+-- Dependencies: 203
 -- Name: command_queue_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3078,8 +3024,8 @@ SELECT pg_catalog.setval('public.command_queue_id_seq', 217, true);
 
 
 --
--- TOC entry 4399 (class 0 OID 0)
--- Dependencies: 207
+-- TOC entry 4381 (class 0 OID 0)
+-- Dependencies: 205
 -- Name: common_context_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3087,8 +3033,8 @@ SELECT pg_catalog.setval('public.common_context_id_seq', 21, true);
 
 
 --
--- TOC entry 4400 (class 0 OID 0)
--- Dependencies: 214
+-- TOC entry 4382 (class 0 OID 0)
+-- Dependencies: 212
 -- Name: edge_cnt_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3096,8 +3042,8 @@ SELECT pg_catalog.setval('public.edge_cnt_id_seq', 1, false);
 
 
 --
--- TOC entry 4401 (class 0 OID 0)
--- Dependencies: 215
+-- TOC entry 4383 (class 0 OID 0)
+-- Dependencies: 213
 -- Name: edge_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3105,8 +3051,8 @@ SELECT pg_catalog.setval('public.edge_id_seq', 1, false);
 
 
 --
--- TOC entry 4402 (class 0 OID 0)
--- Dependencies: 217
+-- TOC entry 4384 (class 0 OID 0)
+-- Dependencies: 215
 -- Name: edge_info_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3114,8 +3060,8 @@ SELECT pg_catalog.setval('public.edge_info_id_seq', 1, false);
 
 
 --
--- TOC entry 4403 (class 0 OID 0)
--- Dependencies: 219
+-- TOC entry 4385 (class 0 OID 0)
+-- Dependencies: 217
 -- Name: edge_param_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3123,8 +3069,8 @@ SELECT pg_catalog.setval('public.edge_param_id_seq', 1, false);
 
 
 --
--- TOC entry 4404 (class 0 OID 0)
--- Dependencies: 224
+-- TOC entry 4386 (class 0 OID 0)
+-- Dependencies: 222
 -- Name: job_data_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3132,17 +3078,17 @@ SELECT pg_catalog.setval('public.job_data_id_seq', 22, true);
 
 
 --
--- TOC entry 4405 (class 0 OID 0)
--- Dependencies: 226
+-- TOC entry 4387 (class 0 OID 0)
+-- Dependencies: 224
 -- Name: localized_string_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
-SELECT pg_catalog.setval('public.localized_string_id_seq', 69, true);
+SELECT pg_catalog.setval('public.localized_string_id_seq', 77, true);
 
 
 --
--- TOC entry 4406 (class 0 OID 0)
--- Dependencies: 228
+-- TOC entry 4388 (class 0 OID 0)
+-- Dependencies: 226
 -- Name: message_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3150,8 +3096,8 @@ SELECT pg_catalog.setval('public.message_id_seq', 41, true);
 
 
 --
--- TOC entry 4407 (class 0 OID 0)
--- Dependencies: 230
+-- TOC entry 4389 (class 0 OID 0)
+-- Dependencies: 228
 -- Name: migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3159,8 +3105,8 @@ SELECT pg_catalog.setval('public.migrations_id_seq', 19, true);
 
 
 --
--- TOC entry 4408 (class 0 OID 0)
--- Dependencies: 232
+-- TOC entry 4390 (class 0 OID 0)
+-- Dependencies: 230
 -- Name: node_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3168,8 +3114,8 @@ SELECT pg_catalog.setval('public.node_id_seq', 1, false);
 
 
 --
--- TOC entry 4409 (class 0 OID 0)
--- Dependencies: 234
+-- TOC entry 4391 (class 0 OID 0)
+-- Dependencies: 232
 -- Name: node_image_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3177,8 +3123,8 @@ SELECT pg_catalog.setval('public.node_image_id_seq', 1, false);
 
 
 --
--- TOC entry 4410 (class 0 OID 0)
--- Dependencies: 236
+-- TOC entry 4392 (class 0 OID 0)
+-- Dependencies: 234
 -- Name: node_info_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3186,8 +3132,8 @@ SELECT pg_catalog.setval('public.node_info_id_seq', 1, false);
 
 
 --
--- TOC entry 4411 (class 0 OID 0)
--- Dependencies: 242
+-- TOC entry 4393 (class 0 OID 0)
+-- Dependencies: 240
 -- Name: quest_context_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3195,8 +3141,8 @@ SELECT pg_catalog.setval('public.quest_context_id_seq', 1, false);
 
 
 --
--- TOC entry 4412 (class 0 OID 0)
--- Dependencies: 244
+-- TOC entry 4394 (class 0 OID 0)
+-- Dependencies: 242
 -- Name: quest_grant_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3204,8 +3150,8 @@ SELECT pg_catalog.setval('public.quest_grant_id_seq', 1, false);
 
 
 --
--- TOC entry 4413 (class 0 OID 0)
--- Dependencies: 245
+-- TOC entry 4395 (class 0 OID 0)
+-- Dependencies: 243
 -- Name: quest_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3213,8 +3159,8 @@ SELECT pg_catalog.setval('public.quest_id_seq', 1, false);
 
 
 --
--- TOC entry 4414 (class 0 OID 0)
--- Dependencies: 247
+-- TOC entry 4396 (class 0 OID 0)
+-- Dependencies: 245
 -- Name: quest_info_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3222,8 +3168,8 @@ SELECT pg_catalog.setval('public.quest_info_id_seq', 1, false);
 
 
 --
--- TOC entry 4415 (class 0 OID 0)
--- Dependencies: 249
+-- TOC entry 4397 (class 0 OID 0)
+-- Dependencies: 247
 -- Name: quest_param_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3231,8 +3177,8 @@ SELECT pg_catalog.setval('public.quest_param_id_seq', 1, false);
 
 
 --
--- TOC entry 4416 (class 0 OID 0)
--- Dependencies: 251
+-- TOC entry 4398 (class 0 OID 0)
+-- Dependencies: 249
 -- Name: quest_stat_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3240,8 +3186,8 @@ SELECT pg_catalog.setval('public.quest_stat_id_seq', 1, false);
 
 
 --
--- TOC entry 4417 (class 0 OID 0)
--- Dependencies: 253
+-- TOC entry 4399 (class 0 OID 0)
+-- Dependencies: 251
 -- Name: quest_subs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3249,8 +3195,8 @@ SELECT pg_catalog.setval('public.quest_subs_id_seq', 1, false);
 
 
 --
--- TOC entry 4418 (class 0 OID 0)
--- Dependencies: 264
+-- TOC entry 4400 (class 0 OID 0)
+-- Dependencies: 262
 -- Name: user_param_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3258,8 +3204,8 @@ SELECT pg_catalog.setval('public.user_param_id_seq', 512, true);
 
 
 --
--- TOC entry 4419 (class 0 OID 0)
--- Dependencies: 266
+-- TOC entry 4401 (class 0 OID 0)
+-- Dependencies: 264
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3267,8 +3213,8 @@ SELECT pg_catalog.setval('public.users_id_seq', 27, true);
 
 
 --
--- TOC entry 4420 (class 0 OID 0)
--- Dependencies: 268
+-- TOC entry 4402 (class 0 OID 0)
+-- Dependencies: 266
 -- Name: watch_id_seq; Type: SEQUENCE SET; Schema: public; Owner: dagaz
 --
 
@@ -3276,7 +3222,7 @@ SELECT pg_catalog.setval('public.watch_id_seq', 1, false);
 
 
 --
--- TOC entry 3919 (class 2606 OID 1810448)
+-- TOC entry 3907 (class 2606 OID 1810448)
 -- Name: db_param PK_00b97969150197eab548d74c749; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3285,7 +3231,7 @@ ALTER TABLE ONLY public.db_param
 
 
 --
--- TOC entry 4033 (class 2606 OID 1810450)
+-- TOC entry 4021 (class 2606 OID 1810450)
 -- Name: response_param PK_060398eaf7f7312dda0f5abb596; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3294,7 +3240,7 @@ ALTER TABLE ONLY public.response_param
 
 
 --
--- TOC entry 3993 (class 2606 OID 1810452)
+-- TOC entry 3981 (class 2606 OID 1810452)
 -- Name: quest PK_0d6873502a58302d2ae0b82631c; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3303,7 +3249,7 @@ ALTER TABLE ONLY public.quest
 
 
 --
--- TOC entry 3957 (class 2606 OID 1810454)
+-- TOC entry 3945 (class 2606 OID 1810454)
 -- Name: job_data PK_132331c9d579dd363e6e33e0bdd; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3312,7 +3258,7 @@ ALTER TABLE ONLY public.job_data
 
 
 --
--- TOC entry 4021 (class 2606 OID 1810456)
+-- TOC entry 4009 (class 2606 OID 1810456)
 -- Name: request PK_167d324701e6867f189aed52e18; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3321,7 +3267,7 @@ ALTER TABLE ONLY public.request
 
 
 --
--- TOC entry 3982 (class 2606 OID 1810458)
+-- TOC entry 3970 (class 2606 OID 1810458)
 -- Name: node_type PK_21db5612f4dbffd0e468819c4ae; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3330,7 +3276,7 @@ ALTER TABLE ONLY public.node_type
 
 
 --
--- TOC entry 4053 (class 2606 OID 1810460)
+-- TOC entry 4041 (class 2606 OID 1810460)
 -- Name: user_param PK_28176b67eb400751f274d37ceaa; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3339,7 +3285,7 @@ ALTER TABLE ONLY public.user_param
 
 
 --
--- TOC entry 3998 (class 2606 OID 1810462)
+-- TOC entry 3986 (class 2606 OID 1810462)
 -- Name: quest_context PK_292168223e12f455df943997406; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3348,7 +3294,7 @@ ALTER TABLE ONLY public.quest_context
 
 
 --
--- TOC entry 3892 (class 2606 OID 1810464)
+-- TOC entry 3884 (class 2606 OID 1810464)
 -- Name: action PK_2d9db9cf5edfbbae74eb56e3a39; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3357,7 +3303,7 @@ ALTER TABLE ONLY public.action
 
 
 --
--- TOC entry 4071 (class 2606 OID 1813508)
+-- TOC entry 4059 (class 2606 OID 1813508)
 -- Name: clear_params PK_2e25c5d4cab045f370c01cea934; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3366,7 +3312,7 @@ ALTER TABLE ONLY public.clear_params
 
 
 --
--- TOC entry 3926 (class 2606 OID 1810466)
+-- TOC entry 3914 (class 2606 OID 1810466)
 -- Name: dbproc PK_347a8c4db5bcb356725698bf4fb; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3375,7 +3321,7 @@ ALTER TABLE ONLY public.dbproc
 
 
 --
--- TOC entry 3945 (class 2606 OID 1810468)
+-- TOC entry 3933 (class 2606 OID 1810468)
 -- Name: game PK_352a30652cd352f552fef73dec5; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3384,7 +3330,7 @@ ALTER TABLE ONLY public.game
 
 
 --
--- TOC entry 3988 (class 2606 OID 1810470)
+-- TOC entry 3976 (class 2606 OID 1810470)
 -- Name: param_type PK_381c87a7ef163ac5f5d0a0263be; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3393,7 +3339,7 @@ ALTER TABLE ONLY public.param_type
 
 
 --
--- TOC entry 4010 (class 2606 OID 1810472)
+-- TOC entry 3998 (class 2606 OID 1810472)
 -- Name: quest_param PK_3ae8947e3e653f4079ee5d4e12d; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3402,7 +3348,7 @@ ALTER TABLE ONLY public.quest_param
 
 
 --
--- TOC entry 3960 (class 2606 OID 1810474)
+-- TOC entry 3948 (class 2606 OID 1810474)
 -- Name: localized_string PK_3d87c2f47c074f8444b233f34c1; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3411,7 +3357,7 @@ ALTER TABLE ONLY public.localized_string
 
 
 --
--- TOC entry 4017 (class 2606 OID 1810476)
+-- TOC entry 4005 (class 2606 OID 1810476)
 -- Name: quest_subs PK_3e2652420789f1a2523337eed34; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3420,7 +3366,7 @@ ALTER TABLE ONLY public.quest_subs
 
 
 --
--- TOC entry 4046 (class 2606 OID 1810478)
+-- TOC entry 4034 (class 2606 OID 1810478)
 -- Name: server_option PK_4a63aee543aefce1f69f602f6a9; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3429,7 +3375,7 @@ ALTER TABLE ONLY public.server_option
 
 
 --
--- TOC entry 4025 (class 2606 OID 1810480)
+-- TOC entry 4013 (class 2606 OID 1810480)
 -- Name: request_param PK_4acba212601abfaf5f48b79ebf3; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3438,7 +3384,7 @@ ALTER TABLE ONLY public.request_param
 
 
 --
--- TOC entry 3923 (class 2606 OID 1810482)
+-- TOC entry 3911 (class 2606 OID 1810482)
 -- Name: db_result PK_4e8f774e16c0dc26dffffcf9fd7; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3447,7 +3393,7 @@ ALTER TABLE ONLY public.db_result
 
 
 --
--- TOC entry 4079 (class 2606 OID 1836319)
+-- TOC entry 4067 (class 2606 OID 1836319)
 -- Name: action_param PK_5179f3470c8cdd1408bcd6a499d; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3456,7 +3402,7 @@ ALTER TABLE ONLY public.action_param
 
 
 --
--- TOC entry 3885 (class 2606 OID 1810484)
+-- TOC entry 3877 (class 2606 OID 1810484)
 -- Name: account PK_54115ee388cdb6d86bb4bf5b2ea; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3465,16 +3411,7 @@ ALTER TABLE ONLY public.account
 
 
 --
--- TOC entry 3896 (class 2606 OID 1810486)
--- Name: action_log PK_63cffa5d8af90621882f0388359; Type: CONSTRAINT; Schema: public; Owner: dagaz
---
-
-ALTER TABLE ONLY public.action_log
-    ADD CONSTRAINT "PK_63cffa5d8af90621882f0388359" PRIMARY KEY (id);
-
-
---
--- TOC entry 3906 (class 2606 OID 1810488)
+-- TOC entry 3894 (class 2606 OID 1810488)
 -- Name: command_queue PK_6627a821b98d77204a620dd423c; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3483,7 +3420,7 @@ ALTER TABLE ONLY public.command_queue
 
 
 --
--- TOC entry 4075 (class 2606 OID 1813578)
+-- TOC entry 4063 (class 2606 OID 1813578)
 -- Name: command_param PK_66e28ba00b30f10113044505957; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3492,7 +3429,7 @@ ALTER TABLE ONLY public.command_param
 
 
 --
--- TOC entry 4007 (class 2606 OID 1810490)
+-- TOC entry 3995 (class 2606 OID 1810490)
 -- Name: quest_info PK_6d4d1d04c9821e0be5f0d51e0c7; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3501,7 +3438,7 @@ ALTER TABLE ONLY public.quest_info
 
 
 --
--- TOC entry 3980 (class 2606 OID 1810492)
+-- TOC entry 3968 (class 2606 OID 1810492)
 -- Name: node_info PK_724f5bfaa92ca117c50c533cbbf; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3510,7 +3447,7 @@ ALTER TABLE ONLY public.node_info
 
 
 --
--- TOC entry 3938 (class 2606 OID 1810494)
+-- TOC entry 3926 (class 2606 OID 1810494)
 -- Name: edge_info PK_7892d91c776efc18b6de9a9b493; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3519,7 +3456,7 @@ ALTER TABLE ONLY public.edge_info
 
 
 --
--- TOC entry 3942 (class 2606 OID 1810496)
+-- TOC entry 3930 (class 2606 OID 1810496)
 -- Name: edge_param PK_7a601c0b9138f1addb07fef77c8; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3528,7 +3465,7 @@ ALTER TABLE ONLY public.edge_param
 
 
 --
--- TOC entry 4067 (class 2606 OID 1810498)
+-- TOC entry 4055 (class 2606 OID 1810498)
 -- Name: watch_type PK_81a59d0450feb6e2ce1a6c8417f; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3537,7 +3474,7 @@ ALTER TABLE ONLY public.watch_type
 
 
 --
--- TOC entry 3911 (class 2606 OID 1810500)
+-- TOC entry 3899 (class 2606 OID 1810500)
 -- Name: common_context PK_85ab5ea789d02910bf0fbc9d00c; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3546,7 +3483,7 @@ ALTER TABLE ONLY public.common_context
 
 
 --
--- TOC entry 4003 (class 2606 OID 1810502)
+-- TOC entry 3991 (class 2606 OID 1810502)
 -- Name: quest_grant PK_87498b3b9683b3a671916554a04; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3555,7 +3492,7 @@ ALTER TABLE ONLY public.quest_grant
 
 
 --
--- TOC entry 3967 (class 2606 OID 1810504)
+-- TOC entry 3955 (class 2606 OID 1810504)
 -- Name: migrations PK_8c82d7f526340ab734260ea46be; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3564,7 +3501,7 @@ ALTER TABLE ONLY public.migrations
 
 
 --
--- TOC entry 3972 (class 2606 OID 1810506)
+-- TOC entry 3960 (class 2606 OID 1810506)
 -- Name: node PK_8c8caf5f29d25264abe9eaf94dd; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3573,7 +3510,7 @@ ALTER TABLE ONLY public.node
 
 
 --
--- TOC entry 4035 (class 2606 OID 1810508)
+-- TOC entry 4023 (class 2606 OID 1810508)
 -- Name: script PK_90683f80965555e177a0e7346af; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3582,7 +3519,7 @@ ALTER TABLE ONLY public.script
 
 
 --
--- TOC entry 3953 (class 2606 OID 1810510)
+-- TOC entry 3941 (class 2606 OID 1810510)
 -- Name: job PK_98ab1c14ff8d1cf80d18703b92f; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3591,7 +3528,7 @@ ALTER TABLE ONLY public.job
 
 
 --
--- TOC entry 4014 (class 2606 OID 1810512)
+-- TOC entry 4002 (class 2606 OID 1810512)
 -- Name: quest_stat PK_a3f7e1ef373e887fd9dc4427957; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3600,7 +3537,7 @@ ALTER TABLE ONLY public.quest_stat
 
 
 --
--- TOC entry 4057 (class 2606 OID 1810514)
+-- TOC entry 4045 (class 2606 OID 1810514)
 -- Name: users PK_a3ffb1c0c8416b9fc6f907b7433; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3609,7 +3546,7 @@ ALTER TABLE ONLY public.users
 
 
 --
--- TOC entry 3974 (class 2606 OID 1810516)
+-- TOC entry 3962 (class 2606 OID 1810516)
 -- Name: node_image PK_b862290c73d4d82eb8bb69cc5db; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3618,7 +3555,7 @@ ALTER TABLE ONLY public.node_image
 
 
 --
--- TOC entry 3965 (class 2606 OID 1810518)
+-- TOC entry 3953 (class 2606 OID 1810518)
 -- Name: message PK_ba01f0a3e0123651915008bc578; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3627,7 +3564,7 @@ ALTER TABLE ONLY public.message
 
 
 --
--- TOC entry 3931 (class 2606 OID 1810520)
+-- TOC entry 3919 (class 2606 OID 1810520)
 -- Name: edge PK_bf6f43c9af56d05094d8c57b311; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3636,7 +3573,7 @@ ALTER TABLE ONLY public.edge
 
 
 --
--- TOC entry 3947 (class 2606 OID 1810522)
+-- TOC entry 3935 (class 2606 OID 1810522)
 -- Name: info_type PK_c643c6f06539c2314cddfc9b911; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3645,7 +3582,7 @@ ALTER TABLE ONLY public.info_type
 
 
 --
--- TOC entry 3898 (class 2606 OID 1810524)
+-- TOC entry 3886 (class 2606 OID 1810524)
 -- Name: action_type PK_d1c2e72ba9b5780623b78dde3f5; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3654,7 +3591,7 @@ ALTER TABLE ONLY public.action_type
 
 
 --
--- TOC entry 3935 (class 2606 OID 1810526)
+-- TOC entry 3923 (class 2606 OID 1810526)
 -- Name: edge_cnt PK_d606a87dd9803493af208f3b36b; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3663,7 +3600,7 @@ ALTER TABLE ONLY public.edge_cnt
 
 
 --
--- TOC entry 4048 (class 2606 OID 1810528)
+-- TOC entry 4036 (class 2606 OID 1810528)
 -- Name: server_type PK_d9371787ecdfa78b7a68201872b; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3672,7 +3609,7 @@ ALTER TABLE ONLY public.server_type
 
 
 --
--- TOC entry 3902 (class 2606 OID 1810530)
+-- TOC entry 3890 (class 2606 OID 1810530)
 -- Name: client_message PK_e0575b12011a2d8a2e82ccdc899; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3681,7 +3618,7 @@ ALTER TABLE ONLY public.client_message
 
 
 --
--- TOC entry 3915 (class 2606 OID 1810532)
+-- TOC entry 3903 (class 2606 OID 1810532)
 -- Name: db_action PK_e932eed00d9b667f7dbb3fca9ae; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3690,7 +3627,7 @@ ALTER TABLE ONLY public.db_action
 
 
 --
--- TOC entry 4039 (class 2606 OID 1810534)
+-- TOC entry 4027 (class 2606 OID 1810534)
 -- Name: script_param PK_f4a15b9ae0f64b7a1b326b1d8f7; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3699,7 +3636,7 @@ ALTER TABLE ONLY public.script_param
 
 
 --
--- TOC entry 4029 (class 2606 OID 1810536)
+-- TOC entry 4017 (class 2606 OID 1810536)
 -- Name: response PK_f64544baf2b4dc48ba623ce768f; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3708,7 +3645,7 @@ ALTER TABLE ONLY public.response
 
 
 --
--- TOC entry 4042 (class 2606 OID 1810538)
+-- TOC entry 4030 (class 2606 OID 1810538)
 -- Name: server PK_f8b8af38bdc23b447c0a57c7937; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3717,7 +3654,7 @@ ALTER TABLE ONLY public.server
 
 
 --
--- TOC entry 3986 (class 2606 OID 1810540)
+-- TOC entry 3974 (class 2606 OID 1810540)
 -- Name: option_type PK_f8f3fdf1eb00de49126c04195e7; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3726,7 +3663,7 @@ ALTER TABLE ONLY public.option_type
 
 
 --
--- TOC entry 4065 (class 2606 OID 1810542)
+-- TOC entry 4053 (class 2606 OID 1810542)
 -- Name: watch PK_fcd14254f9a60722c954c0174d0; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3735,7 +3672,7 @@ ALTER TABLE ONLY public.watch
 
 
 --
--- TOC entry 3949 (class 2606 OID 1810544)
+-- TOC entry 3937 (class 2606 OID 1810544)
 -- Name: info_type UQ_1ad1750c41a65762a108bd0d7be; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3744,7 +3681,7 @@ ALTER TABLE ONLY public.info_type
 
 
 --
--- TOC entry 3976 (class 2606 OID 1810546)
+-- TOC entry 3964 (class 2606 OID 1810546)
 -- Name: node_image UQ_239f4597c26af0bb00640d40a3b; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3753,7 +3690,7 @@ ALTER TABLE ONLY public.node_image
 
 
 --
--- TOC entry 3984 (class 2606 OID 1810548)
+-- TOC entry 3972 (class 2606 OID 1810548)
 -- Name: node_type UQ_53562b28771b4d09996aa27c193; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3762,7 +3699,7 @@ ALTER TABLE ONLY public.node_type
 
 
 --
--- TOC entry 3990 (class 2606 OID 1810550)
+-- TOC entry 3978 (class 2606 OID 1810550)
 -- Name: param_type UQ_6722363be3cbc9b8fe27cf53267; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3771,7 +3708,7 @@ ALTER TABLE ONLY public.param_type
 
 
 --
--- TOC entry 4059 (class 2606 OID 1810552)
+-- TOC entry 4047 (class 2606 OID 1810552)
 -- Name: users UQ_fe0bb3f6520ee0469504521e710; Type: CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -3780,7 +3717,7 @@ ALTER TABLE ONLY public.users
 
 
 --
--- TOC entry 4049 (class 1259 OID 1810553)
+-- TOC entry 4037 (class 1259 OID 1810553)
 -- Name: IDX_026fff28b340a045e31d32164c; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3788,15 +3725,7 @@ CREATE INDEX "IDX_026fff28b340a045e31d32164c" ON public.user_param USING btree (
 
 
 --
--- TOC entry 3893 (class 1259 OID 1810554)
--- Name: IDX_0280fa9076adbf5d7cd7fb53c0; Type: INDEX; Schema: public; Owner: dagaz
---
-
-CREATE INDEX "IDX_0280fa9076adbf5d7cd7fb53c0" ON public.action_log USING btree (action_id);
-
-
---
--- TOC entry 4004 (class 1259 OID 1810555)
+-- TOC entry 3992 (class 1259 OID 1810555)
 -- Name: IDX_039e11061bd3581cbfdf4cb69d; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3804,7 +3733,7 @@ CREATE INDEX "IDX_039e11061bd3581cbfdf4cb69d" ON public.quest_info USING btree (
 
 
 --
--- TOC entry 3927 (class 1259 OID 1810556)
+-- TOC entry 3915 (class 1259 OID 1810556)
 -- Name: IDX_043246c5fa0a7b1e7be2cb1eac; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3812,7 +3741,7 @@ CREATE INDEX "IDX_043246c5fa0a7b1e7be2cb1eac" ON public.edge USING btree (to_id)
 
 
 --
--- TOC entry 3961 (class 1259 OID 1810557)
+-- TOC entry 3949 (class 1259 OID 1810557)
 -- Name: IDX_056d9e9fa79f72683e2f03724f; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3820,7 +3749,7 @@ CREATE INDEX "IDX_056d9e9fa79f72683e2f03724f" ON public.message USING btree (sch
 
 
 --
--- TOC entry 4026 (class 1259 OID 1810558)
+-- TOC entry 4014 (class 1259 OID 1810558)
 -- Name: IDX_0799adb0ae11661f7afb4a7549; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3828,7 +3757,7 @@ CREATE INDEX "IDX_0799adb0ae11661f7afb4a7549" ON public.response USING btree (re
 
 
 --
--- TOC entry 3943 (class 1259 OID 1810559)
+-- TOC entry 3931 (class 1259 OID 1810559)
 -- Name: IDX_083453ab918bd78b046351dc20; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3836,7 +3765,7 @@ CREATE INDEX "IDX_083453ab918bd78b046351dc20" ON public.game USING btree (parent
 
 
 --
--- TOC entry 4060 (class 1259 OID 1810560)
+-- TOC entry 4048 (class 1259 OID 1810560)
 -- Name: IDX_0a5a7fe85fe97e12d240098501; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3844,7 +3773,7 @@ CREATE INDEX "IDX_0a5a7fe85fe97e12d240098501" ON public.watch USING btree (user_
 
 
 --
--- TOC entry 3932 (class 1259 OID 1810561)
+-- TOC entry 3920 (class 1259 OID 1810561)
 -- Name: IDX_1124ee83db3e09d701e9d44813; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3852,7 +3781,7 @@ CREATE INDEX "IDX_1124ee83db3e09d701e9d44813" ON public.edge_cnt USING btree (co
 
 
 --
--- TOC entry 4076 (class 1259 OID 1836320)
+-- TOC entry 4064 (class 1259 OID 1836320)
 -- Name: IDX_115f3ebd8448d30ac911a631b5; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3860,7 +3789,7 @@ CREATE INDEX "IDX_115f3ebd8448d30ac911a631b5" ON public.action_param USING btree
 
 
 --
--- TOC entry 4008 (class 1259 OID 1810562)
+-- TOC entry 3996 (class 1259 OID 1810562)
 -- Name: IDX_130d8bf238d468b206d4c9393c; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3868,7 +3797,7 @@ CREATE INDEX "IDX_130d8bf238d468b206d4c9393c" ON public.quest_param USING btree 
 
 
 --
--- TOC entry 3912 (class 1259 OID 1810563)
+-- TOC entry 3900 (class 1259 OID 1810563)
 -- Name: IDX_16308019b0f7f08a066a5247f8; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3876,7 +3805,7 @@ CREATE INDEX "IDX_16308019b0f7f08a066a5247f8" ON public.db_action USING btree (r
 
 
 --
--- TOC entry 3977 (class 1259 OID 1810564)
+-- TOC entry 3965 (class 1259 OID 1810564)
 -- Name: IDX_1c0cc79637dd3d8f63dd9a53cd; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3884,7 +3813,7 @@ CREATE INDEX "IDX_1c0cc79637dd3d8f63dd9a53cd" ON public.node_info USING btree (i
 
 
 --
--- TOC entry 4036 (class 1259 OID 1810565)
+-- TOC entry 4024 (class 1259 OID 1810565)
 -- Name: IDX_1c7a77eb7a3daec5fa0567a445; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3892,7 +3821,7 @@ CREATE INDEX "IDX_1c7a77eb7a3daec5fa0567a445" ON public.script_param USING btree
 
 
 --
--- TOC entry 4030 (class 1259 OID 1810566)
+-- TOC entry 4018 (class 1259 OID 1810566)
 -- Name: IDX_1eb846d6ec7d144991fbd2b452; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3900,15 +3829,7 @@ CREATE INDEX "IDX_1eb846d6ec7d144991fbd2b452" ON public.response_param USING btr
 
 
 --
--- TOC entry 3894 (class 1259 OID 1810567)
--- Name: IDX_200fe513550b423fbc980dbda7; Type: INDEX; Schema: public; Owner: dagaz
---
-
-CREATE INDEX "IDX_200fe513550b423fbc980dbda7" ON public.action_log USING btree (account_id);
-
-
---
--- TOC entry 3920 (class 1259 OID 1810568)
+-- TOC entry 3908 (class 1259 OID 1810568)
 -- Name: IDX_201dbfda43ef6326ffbb0727fb; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3916,7 +3837,7 @@ CREATE INDEX "IDX_201dbfda43ef6326ffbb0727fb" ON public.db_result USING btree (p
 
 
 --
--- TOC entry 3968 (class 1259 OID 1810569)
+-- TOC entry 3956 (class 1259 OID 1810569)
 -- Name: IDX_21db5612f4dbffd0e468819c4a; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3924,7 +3845,7 @@ CREATE INDEX "IDX_21db5612f4dbffd0e468819c4a" ON public.node USING btree (type_i
 
 
 --
--- TOC entry 3913 (class 1259 OID 1810570)
+-- TOC entry 3901 (class 1259 OID 1810570)
 -- Name: IDX_27e363a018598e11b1f15eedb0; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3932,7 +3853,7 @@ CREATE INDEX "IDX_27e363a018598e11b1f15eedb0" ON public.db_action USING btree (a
 
 
 --
--- TOC entry 4018 (class 1259 OID 1810571)
+-- TOC entry 4006 (class 1259 OID 1810571)
 -- Name: IDX_2c6d697bf4bc8e3f320e1c9a56; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3940,7 +3861,7 @@ CREATE INDEX "IDX_2c6d697bf4bc8e3f320e1c9a56" ON public.request USING btree (ser
 
 
 --
--- TOC entry 4061 (class 1259 OID 1810572)
+-- TOC entry 4049 (class 1259 OID 1810572)
 -- Name: IDX_2d66d7b39d8eb33937768f3678; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3948,7 +3869,7 @@ CREATE INDEX "IDX_2d66d7b39d8eb33937768f3678" ON public.watch USING btree (serve
 
 
 --
--- TOC entry 4015 (class 1259 OID 1810573)
+-- TOC entry 4003 (class 1259 OID 1810573)
 -- Name: IDX_3157cfb81cea1cc5b5e911831f; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3956,7 +3877,7 @@ CREATE INDEX "IDX_3157cfb81cea1cc5b5e911831f" ON public.quest_subs USING btree (
 
 
 --
--- TOC entry 3969 (class 1259 OID 1810574)
+-- TOC entry 3957 (class 1259 OID 1810574)
 -- Name: IDX_3780604c26ad15796b9f30572c; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3964,7 +3885,7 @@ CREATE INDEX "IDX_3780604c26ad15796b9f30572c" ON public.node USING btree (quest_
 
 
 --
--- TOC entry 3899 (class 1259 OID 1810575)
+-- TOC entry 3887 (class 1259 OID 1810575)
 -- Name: IDX_3b5b89c3a833b64d2ade8ba141; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3972,7 +3893,7 @@ CREATE INDEX "IDX_3b5b89c3a833b64d2ade8ba141" ON public.client_message USING btr
 
 
 --
--- TOC entry 4022 (class 1259 OID 1810576)
+-- TOC entry 4010 (class 1259 OID 1810576)
 -- Name: IDX_3bb71732d03e940ad8e31bb7c1; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3980,7 +3901,7 @@ CREATE INDEX "IDX_3bb71732d03e940ad8e31bb7c1" ON public.request_param USING btre
 
 
 --
--- TOC entry 3999 (class 1259 OID 1810577)
+-- TOC entry 3987 (class 1259 OID 1810577)
 -- Name: IDX_3be3696b42f3c4aee89f62d3bc; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3988,7 +3909,7 @@ CREATE INDEX "IDX_3be3696b42f3c4aee89f62d3bc" ON public.quest_grant USING btree 
 
 
 --
--- TOC entry 3907 (class 1259 OID 1810578)
+-- TOC entry 3895 (class 1259 OID 1810578)
 -- Name: IDX_3dd19a7be4ba201d5ff98ee747; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -3996,7 +3917,7 @@ CREATE INDEX "IDX_3dd19a7be4ba201d5ff98ee747" ON public.common_context USING btr
 
 
 --
--- TOC entry 4023 (class 1259 OID 1810579)
+-- TOC entry 4011 (class 1259 OID 1810579)
 -- Name: IDX_4100ec11af165353f58a9be26f; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4004,7 +3925,7 @@ CREATE INDEX "IDX_4100ec11af165353f58a9be26f" ON public.request_param USING btre
 
 
 --
--- TOC entry 4027 (class 1259 OID 1810580)
+-- TOC entry 4015 (class 1259 OID 1810580)
 -- Name: IDX_411079d4f5ab0460db9806bf03; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4012,7 +3933,7 @@ CREATE INDEX "IDX_411079d4f5ab0460db9806bf03" ON public.response USING btree (ac
 
 
 --
--- TOC entry 3954 (class 1259 OID 1810581)
+-- TOC entry 3942 (class 1259 OID 1810581)
 -- Name: IDX_4459ef55e0966d13bc6765cdd3; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4020,7 +3941,7 @@ CREATE INDEX "IDX_4459ef55e0966d13bc6765cdd3" ON public.job_data USING btree (se
 
 
 --
--- TOC entry 3924 (class 1259 OID 1810582)
+-- TOC entry 3912 (class 1259 OID 1810582)
 -- Name: IDX_49a07c491eeeeff0a6fb39e4eb; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4028,7 +3949,7 @@ CREATE INDEX "IDX_49a07c491eeeeff0a6fb39e4eb" ON public.dbproc USING btree (acti
 
 
 --
--- TOC entry 3962 (class 1259 OID 1810583)
+-- TOC entry 3950 (class 1259 OID 1810583)
 -- Name: IDX_54ce30caeb3f33d68398ea1037; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4036,7 +3957,7 @@ CREATE INDEX "IDX_54ce30caeb3f33d68398ea1037" ON public.message USING btree (use
 
 
 --
--- TOC entry 3978 (class 1259 OID 1810584)
+-- TOC entry 3966 (class 1259 OID 1810584)
 -- Name: IDX_55aef0d15d6386b16dfedec464; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4044,7 +3965,7 @@ CREATE INDEX "IDX_55aef0d15d6386b16dfedec464" ON public.node_info USING btree (n
 
 
 --
--- TOC entry 4062 (class 1259 OID 1810585)
+-- TOC entry 4050 (class 1259 OID 1810585)
 -- Name: IDX_59e70b861cfe8ccf182615a91c; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4052,7 +3973,7 @@ CREATE INDEX "IDX_59e70b861cfe8ccf182615a91c" ON public.watch USING btree (paren
 
 
 --
--- TOC entry 4037 (class 1259 OID 1810586)
+-- TOC entry 4025 (class 1259 OID 1810586)
 -- Name: IDX_6516280a953c0a48cbf5d058fd; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4060,7 +3981,7 @@ CREATE INDEX "IDX_6516280a953c0a48cbf5d058fd" ON public.script_param USING btree
 
 
 --
--- TOC entry 4000 (class 1259 OID 1810587)
+-- TOC entry 3988 (class 1259 OID 1810587)
 -- Name: IDX_652ac39c2620dd3ec54f464ae4; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4068,7 +3989,7 @@ CREATE INDEX "IDX_652ac39c2620dd3ec54f464ae4" ON public.quest_grant USING btree 
 
 
 --
--- TOC entry 3939 (class 1259 OID 1810588)
+-- TOC entry 3927 (class 1259 OID 1810588)
 -- Name: IDX_7150a8a44ce1bdd2950d03c373; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4076,7 +3997,7 @@ CREATE INDEX "IDX_7150a8a44ce1bdd2950d03c373" ON public.edge_param USING btree (
 
 
 --
--- TOC entry 3928 (class 1259 OID 1810589)
+-- TOC entry 3916 (class 1259 OID 1810589)
 -- Name: IDX_71a6186dbe8a89776b9b820749; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4084,7 +4005,7 @@ CREATE INDEX "IDX_71a6186dbe8a89776b9b820749" ON public.edge USING btree (quest_
 
 
 --
--- TOC entry 4043 (class 1259 OID 1810590)
+-- TOC entry 4031 (class 1259 OID 1810590)
 -- Name: IDX_71bf40ac3f3fa6cb6b13a22962; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4092,7 +4013,7 @@ CREATE INDEX "IDX_71bf40ac3f3fa6cb6b13a22962" ON public.server_option USING btre
 
 
 --
--- TOC entry 4054 (class 1259 OID 1810591)
+-- TOC entry 4042 (class 1259 OID 1810591)
 -- Name: IDX_71f902cdeaaffd294c818f6860; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4100,7 +4021,7 @@ CREATE INDEX "IDX_71f902cdeaaffd294c818f6860" ON public.users USING btree (conte
 
 
 --
--- TOC entry 3886 (class 1259 OID 1810592)
+-- TOC entry 3878 (class 1259 OID 1810592)
 -- Name: IDX_749810f18239007ae8af69d9cc; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4108,7 +4029,7 @@ CREATE INDEX "IDX_749810f18239007ae8af69d9cc" ON public.action USING btree (scri
 
 
 --
--- TOC entry 4072 (class 1259 OID 1813579)
+-- TOC entry 4060 (class 1259 OID 1813579)
 -- Name: IDX_7828f25615a5ce41531db05030; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4116,7 +4037,7 @@ CREATE INDEX "IDX_7828f25615a5ce41531db05030" ON public.command_param USING btre
 
 
 --
--- TOC entry 3908 (class 1259 OID 1810593)
+-- TOC entry 3896 (class 1259 OID 1810593)
 -- Name: IDX_7d185c333dd0ff42eef13bb066; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4124,7 +4045,7 @@ CREATE INDEX "IDX_7d185c333dd0ff42eef13bb066" ON public.common_context USING btr
 
 
 --
--- TOC entry 4063 (class 1259 OID 1810594)
+-- TOC entry 4051 (class 1259 OID 1810594)
 -- Name: IDX_81a59d0450feb6e2ce1a6c8417; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4132,7 +4053,7 @@ CREATE INDEX "IDX_81a59d0450feb6e2ce1a6c8417" ON public.watch USING btree (type_
 
 
 --
--- TOC entry 3921 (class 1259 OID 1810595)
+-- TOC entry 3909 (class 1259 OID 1810595)
 -- Name: IDX_8294bc97c0dd97db4f66524113; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4140,7 +4061,7 @@ CREATE INDEX "IDX_8294bc97c0dd97db4f66524113" ON public.db_result USING btree (p
 
 
 --
--- TOC entry 3950 (class 1259 OID 1810596)
+-- TOC entry 3938 (class 1259 OID 1810596)
 -- Name: IDX_87c4a56d5a9c3c366bcaf92dcd; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4148,7 +4069,7 @@ CREATE INDEX "IDX_87c4a56d5a9c3c366bcaf92dcd" ON public.job USING btree (proc_id
 
 
 --
--- TOC entry 3916 (class 1259 OID 1810597)
+-- TOC entry 3904 (class 1259 OID 1810597)
 -- Name: IDX_8bf28f4984026441c92284410a; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4156,7 +4077,7 @@ CREATE INDEX "IDX_8bf28f4984026441c92284410a" ON public.db_param USING btree (pr
 
 
 --
--- TOC entry 3991 (class 1259 OID 1810598)
+-- TOC entry 3979 (class 1259 OID 1810598)
 -- Name: IDX_9054662a343fc438df763783cc; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4164,7 +4085,7 @@ CREATE INDEX "IDX_9054662a343fc438df763783cc" ON public.quest USING btree (accou
 
 
 --
--- TOC entry 3881 (class 1259 OID 1810599)
+-- TOC entry 3873 (class 1259 OID 1810599)
 -- Name: IDX_9235af5a3c3ff3b64dbfc54e8a; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4172,7 +4093,7 @@ CREATE INDEX "IDX_9235af5a3c3ff3b64dbfc54e8a" ON public.account USING btree (con
 
 
 --
--- TOC entry 4001 (class 1259 OID 1810600)
+-- TOC entry 3989 (class 1259 OID 1810600)
 -- Name: IDX_a007b700c244b54a9b03ee6286; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4180,7 +4101,7 @@ CREATE INDEX "IDX_a007b700c244b54a9b03ee6286" ON public.quest_grant USING btree 
 
 
 --
--- TOC entry 3909 (class 1259 OID 1810601)
+-- TOC entry 3897 (class 1259 OID 1810601)
 -- Name: IDX_ab2298f76536b124a37b3fbcca; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4188,7 +4109,7 @@ CREATE INDEX "IDX_ab2298f76536b124a37b3fbcca" ON public.common_context USING btr
 
 
 --
--- TOC entry 4050 (class 1259 OID 1810602)
+-- TOC entry 4038 (class 1259 OID 1810602)
 -- Name: IDX_b2744c6bb6f12eedc61dab65e2; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4196,7 +4117,7 @@ CREATE INDEX "IDX_b2744c6bb6f12eedc61dab65e2" ON public.user_param USING btree (
 
 
 --
--- TOC entry 3917 (class 1259 OID 1810603)
+-- TOC entry 3905 (class 1259 OID 1810603)
 -- Name: IDX_b81976d15209f94416a21893ca; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4204,7 +4125,7 @@ CREATE INDEX "IDX_b81976d15209f94416a21893ca" ON public.db_param USING btree (pa
 
 
 --
--- TOC entry 3970 (class 1259 OID 1810604)
+-- TOC entry 3958 (class 1259 OID 1810604)
 -- Name: IDX_b862290c73d4d82eb8bb69cc5d; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4212,7 +4133,7 @@ CREATE INDEX "IDX_b862290c73d4d82eb8bb69cc5d" ON public.node USING btree (image_
 
 
 --
--- TOC entry 3933 (class 1259 OID 1810605)
+-- TOC entry 3921 (class 1259 OID 1810605)
 -- Name: IDX_ba0efbbfc447b547744fb2d5b9; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4220,7 +4141,7 @@ CREATE INDEX "IDX_ba0efbbfc447b547744fb2d5b9" ON public.edge_cnt USING btree (ed
 
 
 --
--- TOC entry 4077 (class 1259 OID 1836321)
+-- TOC entry 4065 (class 1259 OID 1836321)
 -- Name: IDX_bb3222213ace369b17b5e415fd; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4228,7 +4149,7 @@ CREATE INDEX "IDX_bb3222213ace369b17b5e415fd" ON public.action_param USING btree
 
 
 --
--- TOC entry 4044 (class 1259 OID 1810606)
+-- TOC entry 4032 (class 1259 OID 1810606)
 -- Name: IDX_bc11440cbddcf89ea8512854a8; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4236,7 +4157,7 @@ CREATE INDEX "IDX_bc11440cbddcf89ea8512854a8" ON public.server_option USING btre
 
 
 --
--- TOC entry 3951 (class 1259 OID 1810607)
+-- TOC entry 3939 (class 1259 OID 1810607)
 -- Name: IDX_be981b8f8d402409a3434ca5d4; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4244,7 +4165,7 @@ CREATE INDEX "IDX_be981b8f8d402409a3434ca5d4" ON public.job USING btree (request
 
 
 --
--- TOC entry 3887 (class 1259 OID 1810608)
+-- TOC entry 3879 (class 1259 OID 1810608)
 -- Name: IDX_c193c40e71f207c07866b5f54a; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4252,7 +4173,7 @@ CREATE INDEX "IDX_c193c40e71f207c07866b5f54a" ON public.action USING btree (foll
 
 
 --
--- TOC entry 4073 (class 1259 OID 1813580)
+-- TOC entry 4061 (class 1259 OID 1813580)
 -- Name: IDX_c3365a0f9296dc645542b98714; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4260,7 +4181,7 @@ CREATE INDEX "IDX_c3365a0f9296dc645542b98714" ON public.command_param USING btre
 
 
 --
--- TOC entry 3929 (class 1259 OID 1810609)
+-- TOC entry 3917 (class 1259 OID 1810609)
 -- Name: IDX_c6bc5f551c85a4abe902748d24; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4268,7 +4189,7 @@ CREATE INDEX "IDX_c6bc5f551c85a4abe902748d24" ON public.edge USING btree (from_i
 
 
 --
--- TOC entry 3940 (class 1259 OID 1810610)
+-- TOC entry 3928 (class 1259 OID 1810610)
 -- Name: IDX_c72d97364af65072c2b2ddfd65; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4276,7 +4197,7 @@ CREATE INDEX "IDX_c72d97364af65072c2b2ddfd65" ON public.edge_param USING btree (
 
 
 --
--- TOC entry 4011 (class 1259 OID 1810611)
+-- TOC entry 3999 (class 1259 OID 1810611)
 -- Name: IDX_c8b02be5d006ec3220a2280847; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4284,7 +4205,7 @@ CREATE INDEX "IDX_c8b02be5d006ec3220a2280847" ON public.quest_stat USING btree (
 
 
 --
--- TOC entry 3900 (class 1259 OID 1810612)
+-- TOC entry 3888 (class 1259 OID 1810612)
 -- Name: IDX_ca9a35f81f3deaa640871b714d; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4292,7 +4213,7 @@ CREATE INDEX "IDX_ca9a35f81f3deaa640871b714d" ON public.client_message USING btr
 
 
 --
--- TOC entry 3958 (class 1259 OID 1810613)
+-- TOC entry 3946 (class 1259 OID 1810613)
 -- Name: IDX_cf9733a3ff386af2c534a0e135; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4300,7 +4221,7 @@ CREATE INDEX "IDX_cf9733a3ff386af2c534a0e135" ON public.localized_string USING b
 
 
 --
--- TOC entry 4031 (class 1259 OID 1810614)
+-- TOC entry 4019 (class 1259 OID 1810614)
 -- Name: IDX_cfd31f3fe0c81f4c60103496b6; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4308,7 +4229,7 @@ CREATE INDEX "IDX_cfd31f3fe0c81f4c60103496b6" ON public.response_param USING btr
 
 
 --
--- TOC entry 3882 (class 1259 OID 1810615)
+-- TOC entry 3874 (class 1259 OID 1810615)
 -- Name: IDX_d09d551463099494ab8632f3e9; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4316,7 +4237,7 @@ CREATE INDEX "IDX_d09d551463099494ab8632f3e9" ON public.account USING btree (ser
 
 
 --
--- TOC entry 3888 (class 1259 OID 1810616)
+-- TOC entry 3880 (class 1259 OID 1810616)
 -- Name: IDX_d1c2e72ba9b5780623b78dde3f; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4324,7 +4245,7 @@ CREATE INDEX "IDX_d1c2e72ba9b5780623b78dde3f" ON public.action USING btree (type
 
 
 --
--- TOC entry 3903 (class 1259 OID 1810617)
+-- TOC entry 3891 (class 1259 OID 1810617)
 -- Name: IDX_d1c4940217c8eb1e191ebb4a86; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4332,7 +4253,7 @@ CREATE INDEX "IDX_d1c4940217c8eb1e191ebb4a86" ON public.command_queue USING btre
 
 
 --
--- TOC entry 4019 (class 1259 OID 1810618)
+-- TOC entry 4007 (class 1259 OID 1810618)
 -- Name: IDX_d1e8e3adc4d12d221c3b034714; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4340,7 +4261,7 @@ CREATE INDEX "IDX_d1e8e3adc4d12d221c3b034714" ON public.request USING btree (act
 
 
 --
--- TOC entry 4051 (class 1259 OID 1810619)
+-- TOC entry 4039 (class 1259 OID 1810619)
 -- Name: IDX_d1fc506598dcf55ce41c27ed82; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4348,7 +4269,7 @@ CREATE INDEX "IDX_d1fc506598dcf55ce41c27ed82" ON public.user_param USING btree (
 
 
 --
--- TOC entry 3963 (class 1259 OID 1810620)
+-- TOC entry 3951 (class 1259 OID 1810620)
 -- Name: IDX_d22ce64c762531de8fb38c4913; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4356,7 +4277,7 @@ CREATE INDEX "IDX_d22ce64c762531de8fb38c4913" ON public.message USING btree (sen
 
 
 --
--- TOC entry 4068 (class 1259 OID 1813509)
+-- TOC entry 4056 (class 1259 OID 1813509)
 -- Name: IDX_d54add567800c92e139ecfa93b; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4364,7 +4285,7 @@ CREATE INDEX "IDX_d54add567800c92e139ecfa93b" ON public.clear_params USING btree
 
 
 --
--- TOC entry 4005 (class 1259 OID 1810621)
+-- TOC entry 3993 (class 1259 OID 1810621)
 -- Name: IDX_d58543ce2773e4eef4f3d5be23; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4372,7 +4293,7 @@ CREATE INDEX "IDX_d58543ce2773e4eef4f3d5be23" ON public.quest_info USING btree (
 
 
 --
--- TOC entry 3994 (class 1259 OID 1810622)
+-- TOC entry 3982 (class 1259 OID 1810622)
 -- Name: IDX_d90e8b70695dd8e30649170efe; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4380,7 +4301,7 @@ CREATE INDEX "IDX_d90e8b70695dd8e30649170efe" ON public.quest_context USING btre
 
 
 --
--- TOC entry 4040 (class 1259 OID 1810623)
+-- TOC entry 4028 (class 1259 OID 1810623)
 -- Name: IDX_d9371787ecdfa78b7a68201872; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4388,7 +4309,7 @@ CREATE INDEX "IDX_d9371787ecdfa78b7a68201872" ON public.server USING btree (type
 
 
 --
--- TOC entry 3904 (class 1259 OID 1810624)
+-- TOC entry 3892 (class 1259 OID 1810624)
 -- Name: IDX_dcf9ef2e51e2128062355742d3; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4396,7 +4317,7 @@ CREATE INDEX "IDX_dcf9ef2e51e2128062355742d3" ON public.command_queue USING btre
 
 
 --
--- TOC entry 3889 (class 1259 OID 1810625)
+-- TOC entry 3881 (class 1259 OID 1810625)
 -- Name: IDX_dd9f38f7d283e189cb6a6c9b84; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4404,7 +4325,7 @@ CREATE INDEX "IDX_dd9f38f7d283e189cb6a6c9b84" ON public.action USING btree (pare
 
 
 --
--- TOC entry 3890 (class 1259 OID 1810626)
+-- TOC entry 3882 (class 1259 OID 1810626)
 -- Name: IDX_de889e5cf4ca9ac70019b43cc8; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4412,7 +4333,7 @@ CREATE INDEX "IDX_de889e5cf4ca9ac70019b43cc8" ON public.action USING btree (para
 
 
 --
--- TOC entry 3955 (class 1259 OID 1810627)
+-- TOC entry 3943 (class 1259 OID 1810627)
 -- Name: IDX_df1c3cb010cfb93c5ced140c67; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4420,7 +4341,7 @@ CREATE INDEX "IDX_df1c3cb010cfb93c5ced140c67" ON public.job_data USING btree (jo
 
 
 --
--- TOC entry 4069 (class 1259 OID 1813525)
+-- TOC entry 4057 (class 1259 OID 1813525)
 -- Name: IDX_e49bf6977925577f8f4ae4d709; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4428,7 +4349,7 @@ CREATE INDEX "IDX_e49bf6977925577f8f4ae4d709" ON public.clear_params USING btree
 
 
 --
--- TOC entry 3936 (class 1259 OID 1810628)
+-- TOC entry 3924 (class 1259 OID 1810628)
 -- Name: IDX_efac6fdb01af430ebe7b646c19; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4436,7 +4357,7 @@ CREATE INDEX "IDX_efac6fdb01af430ebe7b646c19" ON public.edge_info USING btree (e
 
 
 --
--- TOC entry 3883 (class 1259 OID 1810629)
+-- TOC entry 3875 (class 1259 OID 1810629)
 -- Name: IDX_efef1e5fdbe318a379c06678c5; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4444,7 +4365,7 @@ CREATE INDEX "IDX_efef1e5fdbe318a379c06678c5" ON public.account USING btree (use
 
 
 --
--- TOC entry 3995 (class 1259 OID 1810630)
+-- TOC entry 3983 (class 1259 OID 1810630)
 -- Name: IDX_f52beec31634ed2e05c685b8ef; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4452,7 +4373,7 @@ CREATE INDEX "IDX_f52beec31634ed2e05c685b8ef" ON public.quest_context USING btre
 
 
 --
--- TOC entry 4012 (class 1259 OID 1810631)
+-- TOC entry 4000 (class 1259 OID 1810631)
 -- Name: IDX_f66b012cad57c4dd674616029d; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4460,7 +4381,7 @@ CREATE INDEX "IDX_f66b012cad57c4dd674616029d" ON public.quest_stat USING btree (
 
 
 --
--- TOC entry 3996 (class 1259 OID 1810632)
+-- TOC entry 3984 (class 1259 OID 1810632)
 -- Name: IDX_f8d8149f8fc59ee4d08c441038; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4468,7 +4389,7 @@ CREATE INDEX "IDX_f8d8149f8fc59ee4d08c441038" ON public.quest_context USING btre
 
 
 --
--- TOC entry 4055 (class 1259 OID 1810633)
+-- TOC entry 4043 (class 1259 OID 1810633)
 -- Name: IDX_fe0bb3f6520ee0469504521e71; Type: INDEX; Schema: public; Owner: dagaz
 --
 
@@ -4476,7 +4397,7 @@ CREATE INDEX "IDX_fe0bb3f6520ee0469504521e71" ON public.users USING btree (usern
 
 
 --
--- TOC entry 4149 (class 2606 OID 1810634)
+-- TOC entry 4135 (class 2606 OID 1810634)
 -- Name: user_param FK_026fff28b340a045e31d32164c9; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4485,16 +4406,7 @@ ALTER TABLE ONLY public.user_param
 
 
 --
--- TOC entry 4088 (class 2606 OID 1810639)
--- Name: action_log FK_0280fa9076adbf5d7cd7fb53c09; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
---
-
-ALTER TABLE ONLY public.action_log
-    ADD CONSTRAINT "FK_0280fa9076adbf5d7cd7fb53c09" FOREIGN KEY (action_id) REFERENCES public.action(id);
-
-
---
--- TOC entry 4130 (class 2606 OID 1810644)
+-- TOC entry 4116 (class 2606 OID 1810644)
 -- Name: quest_info FK_039e11061bd3581cbfdf4cb69d8; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4503,7 +4415,7 @@ ALTER TABLE ONLY public.quest_info
 
 
 --
--- TOC entry 4102 (class 2606 OID 1810649)
+-- TOC entry 4088 (class 2606 OID 1810649)
 -- Name: edge FK_043246c5fa0a7b1e7be2cb1eac9; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4512,7 +4424,7 @@ ALTER TABLE ONLY public.edge
 
 
 --
--- TOC entry 4140 (class 2606 OID 1810654)
+-- TOC entry 4126 (class 2606 OID 1810654)
 -- Name: response FK_0799adb0ae11661f7afb4a75496; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4521,7 +4433,7 @@ ALTER TABLE ONLY public.response
 
 
 --
--- TOC entry 4110 (class 2606 OID 1810659)
+-- TOC entry 4096 (class 2606 OID 1810659)
 -- Name: game FK_083453ab918bd78b046351dc207; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4530,7 +4442,7 @@ ALTER TABLE ONLY public.game
 
 
 --
--- TOC entry 4153 (class 2606 OID 1810664)
+-- TOC entry 4139 (class 2606 OID 1810664)
 -- Name: watch FK_0a5a7fe85fe97e12d240098501c; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4539,7 +4451,7 @@ ALTER TABLE ONLY public.watch
 
 
 --
--- TOC entry 4105 (class 2606 OID 1810669)
+-- TOC entry 4091 (class 2606 OID 1810669)
 -- Name: edge_cnt FK_1124ee83db3e09d701e9d44813a; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4548,7 +4460,7 @@ ALTER TABLE ONLY public.edge_cnt
 
 
 --
--- TOC entry 4161 (class 2606 OID 1836322)
+-- TOC entry 4147 (class 2606 OID 1836322)
 -- Name: action_param FK_115f3ebd8448d30ac911a631b50; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4557,7 +4469,7 @@ ALTER TABLE ONLY public.action_param
 
 
 --
--- TOC entry 4132 (class 2606 OID 1810674)
+-- TOC entry 4118 (class 2606 OID 1810674)
 -- Name: quest_param FK_130d8bf238d468b206d4c9393cd; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4566,7 +4478,7 @@ ALTER TABLE ONLY public.quest_param
 
 
 --
--- TOC entry 4095 (class 2606 OID 1810679)
+-- TOC entry 4081 (class 2606 OID 1810679)
 -- Name: db_action FK_16308019b0f7f08a066a5247f8b; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4575,7 +4487,7 @@ ALTER TABLE ONLY public.db_action
 
 
 --
--- TOC entry 4121 (class 2606 OID 1810684)
+-- TOC entry 4107 (class 2606 OID 1810684)
 -- Name: node_info FK_1c0cc79637dd3d8f63dd9a53cda; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4584,7 +4496,7 @@ ALTER TABLE ONLY public.node_info
 
 
 --
--- TOC entry 4144 (class 2606 OID 1810689)
+-- TOC entry 4130 (class 2606 OID 1810689)
 -- Name: script_param FK_1c7a77eb7a3daec5fa0567a4456; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4593,7 +4505,7 @@ ALTER TABLE ONLY public.script_param
 
 
 --
--- TOC entry 4142 (class 2606 OID 1810694)
+-- TOC entry 4128 (class 2606 OID 1810694)
 -- Name: response_param FK_1eb846d6ec7d144991fbd2b4528; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4602,16 +4514,7 @@ ALTER TABLE ONLY public.response_param
 
 
 --
--- TOC entry 4089 (class 2606 OID 1810699)
--- Name: action_log FK_200fe513550b423fbc980dbda7c; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
---
-
-ALTER TABLE ONLY public.action_log
-    ADD CONSTRAINT "FK_200fe513550b423fbc980dbda7c" FOREIGN KEY (account_id) REFERENCES public.account(id);
-
-
---
--- TOC entry 4099 (class 2606 OID 1810704)
+-- TOC entry 4085 (class 2606 OID 1810704)
 -- Name: db_result FK_201dbfda43ef6326ffbb0727fb8; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4620,7 +4523,7 @@ ALTER TABLE ONLY public.db_result
 
 
 --
--- TOC entry 4118 (class 2606 OID 1810709)
+-- TOC entry 4104 (class 2606 OID 1810709)
 -- Name: node FK_21db5612f4dbffd0e468819c4ae; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4629,7 +4532,7 @@ ALTER TABLE ONLY public.node
 
 
 --
--- TOC entry 4096 (class 2606 OID 1810714)
+-- TOC entry 4082 (class 2606 OID 1810714)
 -- Name: db_action FK_27e363a018598e11b1f15eedb09; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4638,7 +4541,7 @@ ALTER TABLE ONLY public.db_action
 
 
 --
--- TOC entry 4136 (class 2606 OID 1810719)
+-- TOC entry 4122 (class 2606 OID 1810719)
 -- Name: request FK_2c6d697bf4bc8e3f320e1c9a560; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4647,7 +4550,7 @@ ALTER TABLE ONLY public.request
 
 
 --
--- TOC entry 4154 (class 2606 OID 1810724)
+-- TOC entry 4140 (class 2606 OID 1810724)
 -- Name: watch FK_2d66d7b39d8eb33937768f3678b; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4656,7 +4559,7 @@ ALTER TABLE ONLY public.watch
 
 
 --
--- TOC entry 4135 (class 2606 OID 1810729)
+-- TOC entry 4121 (class 2606 OID 1810729)
 -- Name: quest_subs FK_3157cfb81cea1cc5b5e911831fa; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4665,7 +4568,7 @@ ALTER TABLE ONLY public.quest_subs
 
 
 --
--- TOC entry 4119 (class 2606 OID 1810734)
+-- TOC entry 4105 (class 2606 OID 1810734)
 -- Name: node FK_3780604c26ad15796b9f30572c0; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4674,7 +4577,7 @@ ALTER TABLE ONLY public.node
 
 
 --
--- TOC entry 4138 (class 2606 OID 1810739)
+-- TOC entry 4124 (class 2606 OID 1810739)
 -- Name: request_param FK_3bb71732d03e940ad8e31bb7c13; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4683,7 +4586,7 @@ ALTER TABLE ONLY public.request_param
 
 
 --
--- TOC entry 4127 (class 2606 OID 1810744)
+-- TOC entry 4113 (class 2606 OID 1810744)
 -- Name: quest_grant FK_3be3696b42f3c4aee89f62d3bcf; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4692,7 +4595,7 @@ ALTER TABLE ONLY public.quest_grant
 
 
 --
--- TOC entry 4139 (class 2606 OID 1810749)
+-- TOC entry 4125 (class 2606 OID 1810749)
 -- Name: request_param FK_4100ec11af165353f58a9be26fa; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4701,7 +4604,7 @@ ALTER TABLE ONLY public.request_param
 
 
 --
--- TOC entry 4141 (class 2606 OID 1810754)
+-- TOC entry 4127 (class 2606 OID 1810754)
 -- Name: response FK_411079d4f5ab0460db9806bf03c; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4710,7 +4613,7 @@ ALTER TABLE ONLY public.response
 
 
 --
--- TOC entry 4113 (class 2606 OID 1810759)
+-- TOC entry 4099 (class 2606 OID 1810759)
 -- Name: job_data FK_4459ef55e0966d13bc6765cdd3d; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4719,7 +4622,7 @@ ALTER TABLE ONLY public.job_data
 
 
 --
--- TOC entry 4101 (class 2606 OID 1810764)
+-- TOC entry 4087 (class 2606 OID 1810764)
 -- Name: dbproc FK_49a07c491eeeeff0a6fb39e4eb6; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4728,7 +4631,7 @@ ALTER TABLE ONLY public.dbproc
 
 
 --
--- TOC entry 4116 (class 2606 OID 1810769)
+-- TOC entry 4102 (class 2606 OID 1810769)
 -- Name: message FK_54ce30caeb3f33d68398ea10376; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4737,7 +4640,7 @@ ALTER TABLE ONLY public.message
 
 
 --
--- TOC entry 4122 (class 2606 OID 1810774)
+-- TOC entry 4108 (class 2606 OID 1810774)
 -- Name: node_info FK_55aef0d15d6386b16dfedec4648; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4746,7 +4649,7 @@ ALTER TABLE ONLY public.node_info
 
 
 --
--- TOC entry 4155 (class 2606 OID 1810779)
+-- TOC entry 4141 (class 2606 OID 1810779)
 -- Name: watch FK_59e70b861cfe8ccf182615a91cb; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4755,7 +4658,7 @@ ALTER TABLE ONLY public.watch
 
 
 --
--- TOC entry 4145 (class 2606 OID 1810784)
+-- TOC entry 4131 (class 2606 OID 1810784)
 -- Name: script_param FK_6516280a953c0a48cbf5d058fd2; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4764,7 +4667,7 @@ ALTER TABLE ONLY public.script_param
 
 
 --
--- TOC entry 4128 (class 2606 OID 1810789)
+-- TOC entry 4114 (class 2606 OID 1810789)
 -- Name: quest_grant FK_652ac39c2620dd3ec54f464ae4a; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4773,7 +4676,7 @@ ALTER TABLE ONLY public.quest_grant
 
 
 --
--- TOC entry 4108 (class 2606 OID 1810794)
+-- TOC entry 4094 (class 2606 OID 1810794)
 -- Name: edge_param FK_7150a8a44ce1bdd2950d03c373a; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4782,7 +4685,7 @@ ALTER TABLE ONLY public.edge_param
 
 
 --
--- TOC entry 4103 (class 2606 OID 1810799)
+-- TOC entry 4089 (class 2606 OID 1810799)
 -- Name: edge FK_71a6186dbe8a89776b9b820749e; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4791,7 +4694,7 @@ ALTER TABLE ONLY public.edge
 
 
 --
--- TOC entry 4147 (class 2606 OID 1810804)
+-- TOC entry 4133 (class 2606 OID 1810804)
 -- Name: server_option FK_71bf40ac3f3fa6cb6b13a229621; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4800,7 +4703,7 @@ ALTER TABLE ONLY public.server_option
 
 
 --
--- TOC entry 4152 (class 2606 OID 1810809)
+-- TOC entry 4138 (class 2606 OID 1810809)
 -- Name: users FK_71f902cdeaaffd294c818f68601; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4809,7 +4712,7 @@ ALTER TABLE ONLY public.users
 
 
 --
--- TOC entry 4083 (class 2606 OID 1810814)
+-- TOC entry 4071 (class 2606 OID 1810814)
 -- Name: action FK_749810f18239007ae8af69d9cc2; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4818,7 +4721,7 @@ ALTER TABLE ONLY public.action
 
 
 --
--- TOC entry 4159 (class 2606 OID 1813581)
+-- TOC entry 4145 (class 2606 OID 1813581)
 -- Name: command_param FK_7828f25615a5ce41531db050305; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4827,7 +4730,7 @@ ALTER TABLE ONLY public.command_param
 
 
 --
--- TOC entry 4093 (class 2606 OID 1810819)
+-- TOC entry 4079 (class 2606 OID 1810819)
 -- Name: common_context FK_7d185c333dd0ff42eef13bb066b; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4836,7 +4739,7 @@ ALTER TABLE ONLY public.common_context
 
 
 --
--- TOC entry 4156 (class 2606 OID 1810824)
+-- TOC entry 4142 (class 2606 OID 1810824)
 -- Name: watch FK_81a59d0450feb6e2ce1a6c8417f; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4845,7 +4748,7 @@ ALTER TABLE ONLY public.watch
 
 
 --
--- TOC entry 4100 (class 2606 OID 1810829)
+-- TOC entry 4086 (class 2606 OID 1810829)
 -- Name: db_result FK_8294bc97c0dd97db4f665241132; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4854,7 +4757,7 @@ ALTER TABLE ONLY public.db_result
 
 
 --
--- TOC entry 4111 (class 2606 OID 1810834)
+-- TOC entry 4097 (class 2606 OID 1810834)
 -- Name: job FK_87c4a56d5a9c3c366bcaf92dcdd; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4863,7 +4766,7 @@ ALTER TABLE ONLY public.job
 
 
 --
--- TOC entry 4097 (class 2606 OID 1810839)
+-- TOC entry 4083 (class 2606 OID 1810839)
 -- Name: db_param FK_8bf28f4984026441c92284410ae; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4872,7 +4775,7 @@ ALTER TABLE ONLY public.db_param
 
 
 --
--- TOC entry 4123 (class 2606 OID 1810844)
+-- TOC entry 4109 (class 2606 OID 1810844)
 -- Name: quest FK_9054662a343fc438df763783cc9; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4881,7 +4784,7 @@ ALTER TABLE ONLY public.quest
 
 
 --
--- TOC entry 4080 (class 2606 OID 1810849)
+-- TOC entry 4068 (class 2606 OID 1810849)
 -- Name: account FK_9235af5a3c3ff3b64dbfc54e8a3; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4890,7 +4793,7 @@ ALTER TABLE ONLY public.account
 
 
 --
--- TOC entry 4129 (class 2606 OID 1810854)
+-- TOC entry 4115 (class 2606 OID 1810854)
 -- Name: quest_grant FK_a007b700c244b54a9b03ee62864; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4899,7 +4802,7 @@ ALTER TABLE ONLY public.quest_grant
 
 
 --
--- TOC entry 4094 (class 2606 OID 1810859)
+-- TOC entry 4080 (class 2606 OID 1810859)
 -- Name: common_context FK_ab2298f76536b124a37b3fbcca5; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4908,7 +4811,7 @@ ALTER TABLE ONLY public.common_context
 
 
 --
--- TOC entry 4150 (class 2606 OID 1810864)
+-- TOC entry 4136 (class 2606 OID 1810864)
 -- Name: user_param FK_b2744c6bb6f12eedc61dab65e25; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4917,7 +4820,7 @@ ALTER TABLE ONLY public.user_param
 
 
 --
--- TOC entry 4098 (class 2606 OID 1810869)
+-- TOC entry 4084 (class 2606 OID 1810869)
 -- Name: db_param FK_b81976d15209f94416a21893cac; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4926,7 +4829,7 @@ ALTER TABLE ONLY public.db_param
 
 
 --
--- TOC entry 4120 (class 2606 OID 1810874)
+-- TOC entry 4106 (class 2606 OID 1810874)
 -- Name: node FK_b862290c73d4d82eb8bb69cc5db; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4935,7 +4838,7 @@ ALTER TABLE ONLY public.node
 
 
 --
--- TOC entry 4106 (class 2606 OID 1810879)
+-- TOC entry 4092 (class 2606 OID 1810879)
 -- Name: edge_cnt FK_ba0efbbfc447b547744fb2d5b9b; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4944,7 +4847,7 @@ ALTER TABLE ONLY public.edge_cnt
 
 
 --
--- TOC entry 4148 (class 2606 OID 1810884)
+-- TOC entry 4134 (class 2606 OID 1810884)
 -- Name: server_option FK_bc11440cbddcf89ea8512854a8a; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4953,7 +4856,7 @@ ALTER TABLE ONLY public.server_option
 
 
 --
--- TOC entry 4112 (class 2606 OID 1810889)
+-- TOC entry 4098 (class 2606 OID 1810889)
 -- Name: job FK_be981b8f8d402409a3434ca5d4b; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4962,7 +4865,7 @@ ALTER TABLE ONLY public.job
 
 
 --
--- TOC entry 4084 (class 2606 OID 1810894)
+-- TOC entry 4072 (class 2606 OID 1810894)
 -- Name: action FK_c193c40e71f207c07866b5f54a0; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4971,7 +4874,7 @@ ALTER TABLE ONLY public.action
 
 
 --
--- TOC entry 4160 (class 2606 OID 1813586)
+-- TOC entry 4146 (class 2606 OID 1813586)
 -- Name: command_param FK_c3365a0f9296dc645542b987143; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4980,7 +4883,7 @@ ALTER TABLE ONLY public.command_param
 
 
 --
--- TOC entry 4104 (class 2606 OID 1810899)
+-- TOC entry 4090 (class 2606 OID 1810899)
 -- Name: edge FK_c6bc5f551c85a4abe902748d24c; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4989,7 +4892,7 @@ ALTER TABLE ONLY public.edge
 
 
 --
--- TOC entry 4109 (class 2606 OID 1810904)
+-- TOC entry 4095 (class 2606 OID 1810904)
 -- Name: edge_param FK_c72d97364af65072c2b2ddfd651; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -4998,7 +4901,7 @@ ALTER TABLE ONLY public.edge_param
 
 
 --
--- TOC entry 4133 (class 2606 OID 1810909)
+-- TOC entry 4119 (class 2606 OID 1810909)
 -- Name: quest_stat FK_c8b02be5d006ec3220a2280847d; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5007,7 +4910,7 @@ ALTER TABLE ONLY public.quest_stat
 
 
 --
--- TOC entry 4090 (class 2606 OID 1810914)
+-- TOC entry 4076 (class 2606 OID 1810914)
 -- Name: client_message FK_ca9a35f81f3deaa640871b714d7; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5016,7 +4919,7 @@ ALTER TABLE ONLY public.client_message
 
 
 --
--- TOC entry 4115 (class 2606 OID 1810919)
+-- TOC entry 4101 (class 2606 OID 1810919)
 -- Name: localized_string FK_cf9733a3ff386af2c534a0e1359; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5025,7 +4928,7 @@ ALTER TABLE ONLY public.localized_string
 
 
 --
--- TOC entry 4143 (class 2606 OID 1810924)
+-- TOC entry 4129 (class 2606 OID 1810924)
 -- Name: response_param FK_cfd31f3fe0c81f4c60103496b62; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5034,7 +4937,7 @@ ALTER TABLE ONLY public.response_param
 
 
 --
--- TOC entry 4081 (class 2606 OID 1810929)
+-- TOC entry 4069 (class 2606 OID 1810929)
 -- Name: account FK_d09d551463099494ab8632f3e98; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5043,7 +4946,7 @@ ALTER TABLE ONLY public.account
 
 
 --
--- TOC entry 4085 (class 2606 OID 1810934)
+-- TOC entry 4073 (class 2606 OID 1810934)
 -- Name: action FK_d1c2e72ba9b5780623b78dde3f5; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5052,7 +4955,7 @@ ALTER TABLE ONLY public.action
 
 
 --
--- TOC entry 4091 (class 2606 OID 1810939)
+-- TOC entry 4077 (class 2606 OID 1810939)
 -- Name: command_queue FK_d1c4940217c8eb1e191ebb4a869; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5061,7 +4964,7 @@ ALTER TABLE ONLY public.command_queue
 
 
 --
--- TOC entry 4137 (class 2606 OID 1810944)
+-- TOC entry 4123 (class 2606 OID 1810944)
 -- Name: request FK_d1e8e3adc4d12d221c3b0347147; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5070,7 +4973,7 @@ ALTER TABLE ONLY public.request
 
 
 --
--- TOC entry 4151 (class 2606 OID 1810949)
+-- TOC entry 4137 (class 2606 OID 1810949)
 -- Name: user_param FK_d1fc506598dcf55ce41c27ed827; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5079,7 +4982,7 @@ ALTER TABLE ONLY public.user_param
 
 
 --
--- TOC entry 4117 (class 2606 OID 1810954)
+-- TOC entry 4103 (class 2606 OID 1810954)
 -- Name: message FK_d22ce64c762531de8fb38c49135; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5088,7 +4991,7 @@ ALTER TABLE ONLY public.message
 
 
 --
--- TOC entry 4157 (class 2606 OID 1813511)
+-- TOC entry 4143 (class 2606 OID 1813511)
 -- Name: clear_params FK_d54add567800c92e139ecfa93bc; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5097,7 +5000,7 @@ ALTER TABLE ONLY public.clear_params
 
 
 --
--- TOC entry 4131 (class 2606 OID 1810959)
+-- TOC entry 4117 (class 2606 OID 1810959)
 -- Name: quest_info FK_d58543ce2773e4eef4f3d5be230; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5106,7 +5009,7 @@ ALTER TABLE ONLY public.quest_info
 
 
 --
--- TOC entry 4124 (class 2606 OID 1810964)
+-- TOC entry 4110 (class 2606 OID 1810964)
 -- Name: quest_context FK_d90e8b70695dd8e30649170efe0; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5115,7 +5018,7 @@ ALTER TABLE ONLY public.quest_context
 
 
 --
--- TOC entry 4146 (class 2606 OID 1810969)
+-- TOC entry 4132 (class 2606 OID 1810969)
 -- Name: server FK_d9371787ecdfa78b7a68201872b; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5124,7 +5027,7 @@ ALTER TABLE ONLY public.server
 
 
 --
--- TOC entry 4092 (class 2606 OID 1810974)
+-- TOC entry 4078 (class 2606 OID 1810974)
 -- Name: command_queue FK_dcf9ef2e51e2128062355742d33; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5133,7 +5036,7 @@ ALTER TABLE ONLY public.command_queue
 
 
 --
--- TOC entry 4086 (class 2606 OID 1810979)
+-- TOC entry 4074 (class 2606 OID 1810979)
 -- Name: action FK_dd9f38f7d283e189cb6a6c9b84f; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5142,7 +5045,7 @@ ALTER TABLE ONLY public.action
 
 
 --
--- TOC entry 4087 (class 2606 OID 1810984)
+-- TOC entry 4075 (class 2606 OID 1810984)
 -- Name: action FK_de889e5cf4ca9ac70019b43cc85; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5151,7 +5054,7 @@ ALTER TABLE ONLY public.action
 
 
 --
--- TOC entry 4114 (class 2606 OID 1810989)
+-- TOC entry 4100 (class 2606 OID 1810989)
 -- Name: job_data FK_df1c3cb010cfb93c5ced140c67d; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5160,7 +5063,7 @@ ALTER TABLE ONLY public.job_data
 
 
 --
--- TOC entry 4162 (class 2606 OID 1836327)
+-- TOC entry 4148 (class 2606 OID 1836327)
 -- Name: action_param FK_e13515394c533ac35ac7c1e84b9; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5169,7 +5072,7 @@ ALTER TABLE ONLY public.action_param
 
 
 --
--- TOC entry 4158 (class 2606 OID 1813526)
+-- TOC entry 4144 (class 2606 OID 1813526)
 -- Name: clear_params FK_e49bf6977925577f8f4ae4d7093; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5178,7 +5081,7 @@ ALTER TABLE ONLY public.clear_params
 
 
 --
--- TOC entry 4107 (class 2606 OID 1810994)
+-- TOC entry 4093 (class 2606 OID 1810994)
 -- Name: edge_info FK_efac6fdb01af430ebe7b646c192; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5187,7 +5090,7 @@ ALTER TABLE ONLY public.edge_info
 
 
 --
--- TOC entry 4082 (class 2606 OID 1810999)
+-- TOC entry 4070 (class 2606 OID 1810999)
 -- Name: account FK_efef1e5fdbe318a379c06678c51; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5196,7 +5099,7 @@ ALTER TABLE ONLY public.account
 
 
 --
--- TOC entry 4125 (class 2606 OID 1811004)
+-- TOC entry 4111 (class 2606 OID 1811004)
 -- Name: quest_context FK_f52beec31634ed2e05c685b8ef5; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5205,7 +5108,7 @@ ALTER TABLE ONLY public.quest_context
 
 
 --
--- TOC entry 4134 (class 2606 OID 1811009)
+-- TOC entry 4120 (class 2606 OID 1811009)
 -- Name: quest_stat FK_f66b012cad57c4dd674616029dc; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5214,7 +5117,7 @@ ALTER TABLE ONLY public.quest_stat
 
 
 --
--- TOC entry 4126 (class 2606 OID 1811014)
+-- TOC entry 4112 (class 2606 OID 1811014)
 -- Name: quest_context FK_f8d8149f8fc59ee4d08c4410381; Type: FK CONSTRAINT; Schema: public; Owner: dagaz
 --
 
@@ -5222,7 +5125,7 @@ ALTER TABLE ONLY public.quest_context
     ADD CONSTRAINT "FK_f8d8149f8fc59ee4d08c4410381" FOREIGN KEY (action_id) REFERENCES public.action(id);
 
 
--- Completed on 2024-01-03 17:21:28
+-- Completed on 2024-01-10 11:15:01
 
 --
 -- PostgreSQL database dump complete
