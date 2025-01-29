@@ -8,12 +8,7 @@ const BOT_DEVICE = 'telegram';
 async function getToken() {
     try {
       const x = await db.query(
-        `select b.value as token
-         from   server a
-         inner  join server_option b on (b.server_id = a.id)
-         where  a.type_id = 1
-         order  by a.id
-         limit  1`);
+        `select token, id from server_token order by id limit 1`);
       return x.rows[0].token;
     } catch (error) {
       console.error(error);
@@ -24,21 +19,12 @@ async function getCommands() {
     try {
       let r = [];
       const x = await db.query(
-        `select x.command, x.action_id, x.script_id, x.name
-         from ( select a.command, b.id as action_id, a.id as script_id, a.name,
-                       row_number() over (partition by a.id order by b.order_num) rn
-                from   script a
-                inner  join action b on (b.script_id = a.id and b.parent_id is null)
-                where  not a.command is null ) x
-         where  x.rn = 1`);
+        `select command, action_id, script_id, name from command_list`);
          if (x.rows && x.rows.length > 0) {
              for (let i = 0; i < x.rows.length; i++) {
                  let p = [];
                  const y = await db.query(
-                  `select a.paramtype_id
-                   from   script_param a
-                   where  a.script_id = $1
-                   order  by a.order_num`, [x.rows[i].script_id]);
+                  `select a.paramtype_id from script_param a where a.script_id = $1 order by a.order_num`, [x.rows[i].script_id]);
                  if (y.rows && y.rows.length > 0) {
                      for (let j = 0; j < y.rows.length; j++) {
                           p.push(y.rows[j].paramtype_id);
@@ -60,9 +46,7 @@ async function getCommands() {
 
   async function getUserId(username) {
     const x = await db.query(
-      `select id
-       from   users a
-       where  a.username = $1`, [username]);
+      `select id from users a where a.username = $1`, [username]);
     if (!x.rows || x.rows.length == 0) {
        return null;
     }
@@ -71,9 +55,7 @@ async function getCommands() {
 
   async function getContextId(username) {
     const x = await db.query(
-      `select context_id
-       from   users a
-       where  a.username = $1`, [username]);
+      `select context_id from users a where a.username = $1`, [username]);
     if (!x.rows || x.rows.length == 0) {
        return null;
     }
@@ -115,20 +97,7 @@ async function getCommands() {
   async function getVirtualMenu(menucallback) {
     try {
       const x = await db.query(
-        `select a.id as user_id, b.id, a.chat_id,
-                coalesce(c.message, d.message) as message, e.value,
-                x.id as context_id, coalesce(p.value, 1) as width
-         from   users a
-         inner  join common_context x on (x.id = a.context_id)
-         inner  join action b on (b.id = x.action_id and b.type_id = 6)
-         left   join action_param p on (p.action_id = b.id and p.type_id = 13)
-         left   join user_param u on (u.user_id = a.id and u.type_id = 7)
-         left   join localized_string c on (c.action_id = b.id and c.locale = u.value)
-         inner  join localized_string d on (d.action_id = b.id and d.locale = 'en')
-         inner  join user_param e on (e.user_id = a.id and e.type_id = b.paramtype_id)
-         where  x.scheduled < now()
-         order  by x.scheduled
-         limit  100`);
+        `select user_id, id, chat_id, message, value, context_id, width, scheduled from virtual_menu order by scheduled limit 100`);
       if (!x.rows || x.rows.length == 0) return false;
       for (let i = 0; i < x.rows.length; i++) {
         const list = x.rows[i].value.split(/,/);
@@ -165,28 +134,11 @@ async function getCommands() {
   async function getMenu(menucallback) {
     try {
       const x = await db.query(
-        `select a.id as user_id, b.id, a.chat_id,
-                coalesce(c.message, d.message) as message,
-                coalesce(c.locale, d.locale) as locale,
-                x.id as context_id, coalesce(p.value, 1) as width
-         from   users a
-         inner  join common_context x on (x.id = a.context_id)
-         inner  join action b on (b.id = x.action_id and b.type_id = 3)
-         left   join action_param p on (p.action_id = b.id and p.type_id = 13)
-         left   join user_param u on (u.user_id = a.id and u.type_id = 7)
-         left   join localized_string c on (c.action_id = b.id and c.locale = u.value)
-         inner  join localized_string d on (d.action_id = b.id and d.locale = 'en')
-         where  x.scheduled < now()
-         order  by x.scheduled
-         limit  100`);
+        `select user_id, id, chat_id, message, locale, context_id, width from static_menu order by scheduled limit 100`);
       if (!x.rows || x.rows.length == 0) return false;
       for (let i = 0; i < x.rows.length; i++) {
         const y = await db.query(
-       `select a.id, a.order_num, c.message
-        from   action a
-        inner  join localized_string c on (c.action_id = a.id and c.locale = $1)
-        where  a.parent_id = $2
-        order  by a.order_num`, [x.rows[i].locale, x.rows[i].id]);
+       `select a.id, a.order_num, c.message from action a inner join localized_string c on (c.action_id = a.id and c.locale = $1) where a.parent_id = $2 order by a.order_num`, [x.rows[i].locale, x.rows[i].id]);
         let menu = []; let row = [];
         for (let j = 0; j < y.rows.length; j++) {
             if (row.length >= x.rows[i].width) {
@@ -220,23 +172,14 @@ async function getCommands() {
   async function chooseItem(username, data, chatId, del) {
     try {
       const x = await db.query(
-        `select a.id, b.paramtype_id, b.follow_to, x.delete_message,
-                x.id as context_id
-         from   users a
-         inner  join common_context x on (x.id = a.context_id)
-         left   join action b on (b.id = x.action_id and b.type_id = 6)
-         where  a.username = $1`, [username]);
+        `select id, paramtype_id, follow_to, delete_message, context_id from user_action where username = $1`, [username]);
       if (!x.rows || x.rows.length == 0) return;
       let action = x.rows[0].follow_to;
       if (x.rows[0].paramtype_id) {
         await db.query(`update user_param set created = now(), value = $1 where user_id = $2 and type_id = $3`, [data, x.rows[0].id, x.rows[0].paramtype_id]);
       } else {
         const y = await db.query(
-          `select x.id
-           from ( select a.id, row_number() over (order by a.order_num) as rn
-                  from   action a
-                  where  a.parent_id = $1) x
-           where  x.rn = 1`, [data]);
+          `select x.id from (select a.id, row_number() over (order by a.order_num) as rn from action a where a.parent_id = $1) x where  x.rn = 1`, [data]);
         if (y.rows && y.rows.length > 0) {
            action = y.rows[0].id;
         }
@@ -252,26 +195,15 @@ async function getCommands() {
 
   async function getNextAction(id, isParent) {
     const x = await db.query(
-      `select a.script_id, coalesce(a.parent_id, 0) as parent_id, a.order_num
-       from   action a
-       where  a.id = $1`, [id]);
+      `select a.script_id, coalesce(a.parent_id, 0) as parent_id, a.order_num from action a where a.id = $1`, [id]);
     if (!x.rows || x.rows.length == 0) return null;
     if (isParent) {
       const z = await db.query(
-        `select a.id
-         from   action a
-         where  a.script_id = $1 
-         and    coalesce(a.parent_id, 0) = $2
-         order  by a.order_num`, [x.rows[0].script_id, id]);
+        `select a.id from action a where a.script_id = $1 and coalesce(a.parent_id, 0) = $2 order by a.order_num`, [x.rows[0].script_id, id]);
       if (z.rows && z.rows.length > 0) return z.rows[0].id;
     }
     const y = await db.query(
-      `select a.id
-       from   action a
-       where  a.script_id = $1 
-       and    coalesce(a.parent_id, 0) = $2
-       and    a.order_num > $3
-       order  by a.order_num`, [x.rows[0].script_id, x.rows[0].parent_id, x.rows[0].order_num]);
+      `select a.id from action a where a.script_id = $1 and coalesce(a.parent_id, 0) = $2 and a.order_num > $3 order by a.order_num`, [x.rows[0].script_id, x.rows[0].parent_id, x.rows[0].order_num]);
     if (!y.rows || y.rows.length == 0) return null;
     return y.rows[0].id;
   }
@@ -291,10 +223,7 @@ async function getCommands() {
     while (r) {
       const name = r[1];
       const x = await db.query(
-        `select b.value
-         from   param_type a
-         left   join user_param b on (b.type_id = a.id and b.user_id = $1)
-         where  a.name = $2`, [user_id, name]);
+        `select b.value from param_type a left join user_param b on (b.type_id = a.id and b.user_id = $1) where  a.name = $2`, [user_id, name]);
       let v = '';
       if (x.rows && x.rows.length > 0) v = x.rows[0].value;
       s = s.replace('{' + name + '}', v);
@@ -306,19 +235,7 @@ async function getCommands() {
   async function sendInfo(send) {
     try {
       const x = await db.query(
-        `select a.chat_id, b.id, coalesce(c.message, d.message) as message, 
-                b.follow_to, a.id as user_id, e.value as data,
-                x.id as context_id
-         from   users a
-         inner  join common_context x on (x.id = a.context_id)
-         inner  join action b on (b.id = x.action_id and b.type_id = 1)
-         left   join user_param u on (u.user_id = a.id and u.type_id = 7)
-         left   join localized_string c on (c.action_id = b.id and c.locale = u.value)
-         left   join localized_string d on (d.action_id = b.id and d.locale = 'en')
-         left   join user_param e on (e.user_id = a.id and e.type_id = b.paramtype_id)
-         where  x.scheduled < now()
-         order  by x.scheduled
-         limit  100`);
+        `select chat_id, id, message, follow_to, user_id, data, context_id from info_list order by scheduled limit 100`);
       if (!x.rows || x.rows.length == 0) return false;
       for (let i = 0; i < x.rows.length; i++) {
         let message = x.rows[i].message;
@@ -339,17 +256,7 @@ async function getCommands() {
   async function getParams(send) {
     try {
       const x = await db.query(
-        `select a.chat_id, a.id, b.paramtype_id, coalesce(c.message, d.message) as message,
-                x.id as context_id
-         from   users a
-         inner  join common_context x on (x.id = a.context_id)
-         inner  join action b on (b.id = x.action_id and b.type_id = 2)
-         left   join user_param u on (u.user_id = a.id and u.type_id = 7)
-         left   join localized_string c on (c.action_id = b.id and c.locale = u.value)
-         inner  join localized_string d on (d.action_id = b.id and d.locale = 'en')
-         where  x.scheduled < now() and x.wait_for is null
-         order  by x.scheduled
-         limit  100`);
+        `select chat_id, id, paramtype_id, message, context_id from param_list order by scheduled limit 100`);
       if (!x.rows || x.rows.length == 0) return false;
       for (let i = 0; i < x.rows.length; i++) {
         let message = x.rows[i].message;
@@ -366,13 +273,7 @@ async function getCommands() {
   async function saveParam(username, data, chatId, msgId, del) {
     try {
       const x = await db.query(
-        `select a.id as user_id, x.wait_for, b.id, x.action_id, c.is_hidden,
-                x.id as context_id
-         from   users a
-         inner  join common_context x on (x.id = a.context_id)
-         left   join user_param b on (b.user_id = a.id and b.type_id = x.wait_for)
-         inner  join param_type c on (c.id = x.wait_for)
-         where  a.username = $1 and not x.wait_for is null`, [username]);
+        `select user_id, wait_for, id, action_id, is_hidden, context_id from param_action where username = $1`, [username]);
       if (!x.rows || x.rows.length == 0) return false;
       const action = await getNextAction(x.rows[0].action_id, true);
       await db.query(`select setParamValue($1, $2, $3)`, [x.rows[0].user_id, x.rows[0].wait_for, data]);
@@ -392,10 +293,7 @@ async function getCommands() {
       let reply_id = null;
       if (reply) {
           const x = await db.query(
-            `select b.message_id
-             from   client_message a
-             inner  join message b on (b.id = a.parent_id)
-             where  a.message_id = $1`, [reply.message_id]);
+            `select b.message_id from client_message a inner join message b on (b.id = a.parent_id) where a.message_id = $1`, [reply.message_id]);
           if (x.rows && x.rows.length > 0) {
              reply_id = x.rows[0].message_id;
           }
@@ -409,19 +307,11 @@ async function getCommands() {
   async function sendMessages(send) {
     try {
       const x = await db.query(
-        `select a.id, a.send_to, a.locale, a.data, b.is_admin, a.reply_for
-         from   message a
-         left   join users b on (b.id = a.user_id)
-         where  a.scheduled < now()
-         order  by a.scheduled
-         limit  1`);
+        `select id, send_to, locale, data, is_admin, reply_for from message_list order by scheduled limit 1`);
       if (!x.rows || x.rows.length == 0) return false;
       if (x.rows[0].send_to) {
         const y = await db.query(
-          `select a.chat_id, b.id
-           from   users a
-           left   join message b on (b.user_id = a.id and b.message_id = $1)
-           where  a.id = $2`, [x.rows[0].reply_for, x.rows[0].send_to]);
+          `select a.chat_id, b.id from users a left join message b on (b.user_id = a.id and b.message_id = $1) where a.id = $2`, [x.rows[0].reply_for, x.rows[0].send_to]);
            if (y.rows && y.rows.length > 0 && (!x.rows[0].reply_for || y.rows[0].id)) {
              const msg = await send(y.rows[0].chat_id, x.rows[0].data, x.rows[0].reply_for);
              if (msg) {
@@ -431,11 +321,7 @@ async function getCommands() {
       } else {
         if (x.rows[0].is_admin) {
             const y = await db.query(
-              `select a.chat_id, c.id
-               from   users a
-               left   join user_param b on (b.user_id = a.id and type_id = 7)
-               left   join message c on (c.user_id = a.id and c.message_id = $1)
-               where  coalesce(b.value, 'en') = $2 `, [x.rows[0].reply_for, x.rows[0].locale]);
+              `select a.chat_id, c.id from users a left join user_param b on (b.user_id = a.id and type_id = 7) left join message c on (c.user_id = a.id and c.message_id = $1) where coalesce(b.value, 'en') = $2`, [x.rows[0].reply_for, x.rows[0].locale]);
             if (y.rows && y.rows.length > 0) {
                for (let i = 0; i < y.rows.length; i++) {
                 if (!x.rows[0].reply_for || y.rows[i].id) {
@@ -448,10 +334,7 @@ async function getCommands() {
             }
         } else {
             const y = await db.query(
-              `select a.chat_id, b.id
-               from   users a
-               left   join message b on (b.user_id = a.id and b.message_id = $1)
-               where  a.is_admin`, [x.rows[0].reply_for]);
+              `select a.chat_id, b.id from users a left join message b on (b.user_id = a.id and b.message_id = $1) where a.is_admin`, [x.rows[0].reply_for]);
             if (y.rows && y.rows.length > 0) {
                for (let i = 0; i < y.rows.length; i++) {
                 if (!x.rows[0].reply_for || y.rows[i].id) {
@@ -516,25 +399,12 @@ async function getCommands() {
   async function httpRequest() {
     try {
       const x = await db.query(
-        `select a.id as user_id, d.id as request_id, b.id as action_id, d.request_type,
-                e.api || d.url as url, x.id as context_id
-         from   users a
-         inner  join common_context x on (x.id = a.context_id)
-         inner  join action b on (b.id = x.action_id)
-         inner  join action_type c on (c.id = b.type_id)
-         inner  join request d on (d.actiontype_id = c.id)
-         inner  join server e on (e.id = d.server_id)
-         where  x.scheduled < now()
-         order  by x.scheduled
-         limit  100`);
+        `select user_id, request_id, action_id, request_type, url, context_id from http_list order by scheduled limit 100`);
       if (!x.rows || x.rows.length == 0) return false;
       for (let k = 0; k < x.rows.length; k++) {
         let body = {};
         const y = await db.query(
-         `select a.param_name, b.value
-          from   request_param a
-          left   join user_param b on (b.type_id = a.paramtype_id and b.user_id = $1)
-          where  a.request_id = $2`, [x.rows[k].user_id, x.rows[k].request_id]);
+         `select a.param_name, b.value from request_param a left join user_param b on (b.type_id = a.paramtype_id and b.user_id = $1) where a.request_id = $2`, [x.rows[k].user_id, x.rows[k].request_id]);
         if (y.rows && y.rows.length > 0) {
            for (let i = 0 ; i < y.rows.length; i++) {
              body[y.rows[i].param_name] = y.rows[i].value;
@@ -552,14 +422,10 @@ async function getCommands() {
   async function getResponse(reuestId, httpCode) {
     try {
       const x = await db.query(
-        `select a.id, a.order_num
-         from   response a
-         where  a.request_id = $1 and a.result_code = $2`, [reuestId, httpCode]);
+        `select a.id, a.order_num from response a where a.request_id = $1 and a.result_code = $2`, [reuestId, httpCode]);
       if (!x.rows || x.rows.length == 0) return null;
       const y = await db.query(
-        `select a.paramtype_id as code, a.param_name as name
-         from   response_param a
-         where  a.response_id = $1`, [x.rows[0].id]);
+        `select a.paramtype_id as code, a.param_name as name from response_param a where a.response_id = $1`, [x.rows[0].id]);
       let params = [];
       if (y.rows && y.rows.length > 0) {
          for (let i = 0; i < y.rows.length; i++) {
@@ -597,27 +463,13 @@ async function getCommands() {
   async function dbProc() {
     try {
       const x = await db.query(
-        `select a.id as user_id, d.id as proc_id, b.id as action_id, 
-                d.name as proc_name, a.username as user_name,
-                x.id as context_id
-         from   users a
-         inner  join common_context x on (x.id = a.context_id)
-         inner  join action b on (b.id = x.action_id)
-         inner  join action_type c on (c.id = b.type_id)
-         inner  join dbproc d on (d.actiontype_id = c.id)
-         where  x.scheduled < now()
-         order  by x.scheduled
-         limit  100`);
+        `select user_id, proc_id, action_id, proc_name, user_name, context_id from db_list order by scheduled limit 100`);
       if (!x.rows || x.rows.length == 0) return false;
       for (let k = 0; k < x.rows.length; k++) {
         let params = [x.rows[k].user_id];
         let sql = 'select ' + x.rows[k].proc_name + '($1';
         const y = await db.query(
-           `select a.order_num, coalesce(b.value, a.value) as value
-            from  db_param a
-            left  join user_param b on (b.type_id = a.paramtype_id and b.user_id = $1)
-            where a.proc_id = $2
-            order by a.order_num`, [x.rows[k].user_id, x.rows[k].proc_id]);
+           `select a.order_num, coalesce(b.value, a.value) as value from db_param a left join user_param b on (b.type_id = a.paramtype_id and b.user_id = $1) where a.proc_id = $2 order by a.order_num`, [x.rows[k].user_id, x.rows[k].proc_id]);
         if (y.rows && y.rows.length > 0) {
             for (let i = 0; i < y.rows.length; i++) {
                  sql = sql + ',$' + y.rows[i].order_num;
@@ -629,9 +481,7 @@ async function getCommands() {
         const z = await db.query(sql, params);
         if (z.rows && z.rows.length > 0) {
              const p = await db.query(`
-              select a.name, a.paramtype_id
-              from   db_result a
-              where  a.proc_id = $1 and not a.paramtype_id is null`, [x.rows[k].proc_id]);
+              select a.name, a.paramtype_id from db_result a where a.proc_id = $1 and not a.paramtype_id is null`, [x.rows[k].proc_id]);
             if (p.rows && p.rows.length > 0) {
               for (let i = 0; i < p.rows.length; i++) {
                 if (z.rows[0].value[p.rows[i].name]) {
@@ -640,11 +490,7 @@ async function getCommands() {
               }
             }
             const q = await db.query(`
-              select a.name, b.result_value, b.action_id
-              from   db_result a
-              inner  join db_action b on (b.result_id = a.id)
-              where  a.proc_id = $1
-              order  by b.order_num`, [x.rows[k].proc_id]);
+              select a.name, b.result_value, b.action_id from db_result a inner join db_action b on (b.result_id = a.id) where a.proc_id = $1 order by b.order_num`, [x.rows[k].proc_id]);
             if (q.rows && q.rows.length > 0) {
                for (let i = 0; i < q.rows.length; i++) {
                   if (z.rows[0].value[q.rows[i].name] == q.rows[i].result_value) {
@@ -693,11 +539,7 @@ async function getCommands() {
   async function runJob() {
     try {
       const x = await db.query(
-        `select a.id, b.request_type, d.api || b.url as url, c.name, d.id as server_id
-         from   job a
-         inner  join request b on (b.id = a.request_id)
-         inner  join dbproc c on (c.id = a.proc_id)
-         inner  join server d on (d.id = b.server_id)`);
+        `select id, request_type, url, name, server_id from job_list`);
       if (!x.rows || x.rows.length == 0) return false;
       for (let i = 0; i < x.rows.length; i++) {
          await httpJob(x.rows[i].id, x.rows[i].request_type, x.rows[i].url, x.rows[i].name, x.rows[i].server_id);
